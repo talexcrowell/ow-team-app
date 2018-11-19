@@ -13,3 +13,6 @@ class RegistrationForm extends React.Component {
     </form>
   }
 }
+
+// https://codesandbox.io/s/6jy2vpqqor
+// https://codesandbox.io/s/62k40w0w43
