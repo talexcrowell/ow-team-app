@@ -8,6 +8,7 @@ function LandingPage (props){
       <div>
         <a href='#'>Login</a>
         <a href='#'>Register</a>
+        <a href='#'>More Info</a>
       </div>
     </div>
   )
