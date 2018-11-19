@@ -13,7 +13,9 @@ export class TeamBuild extends React.Component {
     ));
 
     return(
-      <ul>{heroes}</ul>
+      <div>
+        <ul>{heroes}</ul>
+      </div>
     )
   }
 }
