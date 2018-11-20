@@ -1,8 +1,8 @@
 import React from 'react';
-import { reduxForm, Field, focus } from 'redux-form';
+import {connect} from 'react-redux';
 
-class RegistrationForm extends React.Component {
-  render() {
+function RegistrationForm (props) {
+  return (
     <form >
       <label>Email</label>
       <input></input>
@@ -11,8 +11,10 @@ class RegistrationForm extends React.Component {
       <label>Password</label>
       <input></input>
     </form>
-  }
+  )
 }
+
+export default connect()(RegistrationForm);
 
 // https://codesandbox.io/s/6jy2vpqqor
 // https://codesandbox.io/s/62k40w0w43
