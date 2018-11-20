@@ -1,23 +1,34 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {fetchHeroes} from '../actions/heroes';
+import {fetchUserTeams, addHeroToUserTeam} from '../actions/user';
 
 export class TeamBuild extends React.Component {
   componentDidMount() {
     this.props.dispatch(fetchHeroes());
+    // this.props.dispatch(fetchUserTeams());
   }
 
   render() {
-    const heroes = this.props.heroes.map((hero, index) => (
-      <li key={index}>{hero.heroName}</li>
+    const userTeams = this.props.userTeams.map((team, index) => (
+      <li key={index}>{team}</li>
     ));
+    
+    const heroes = this.props.heroes.map((hero, index) => (
+      <li key={index}>
+        {hero.heroName}
+        <button onClick={() => this.props.dispatch(addHeroToUserTeam(this.props.heroes[index]))}>
+        +</button>
+        </li>
+    ));
+
 
     return(
       <div>
-        <div>
+        <div className="hero-roster">
           <ul>{heroes}</ul>
         </div>
-        <div>
+        <section className="current-build">
           <p>Current Team:</p>
           <ul></ul>
             <li>Damage:</li>
@@ -25,7 +36,10 @@ export class TeamBuild extends React.Component {
             <li>Health:</li>
             <li>Healing Per Second:</li>
             <li>Abilities:</li>
-        </div>
+        </section>
+        <section>
+          <ul>{userTeams}</ul>
+        </section>
       </div>
     )
   }
@@ -33,7 +47,8 @@ export class TeamBuild extends React.Component {
 
 function mapStateToProps(state){
   return{
-    heroes: state.heroes  
+    heroes: state.heroes.heroes,
+    userTeams: state.user.teams  
   }
 }
 
