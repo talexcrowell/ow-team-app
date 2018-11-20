@@ -24,10 +24,34 @@ export const addHeroToUserTeam = (hero) => ({
   hero
 })
 
+export const RESET_USER_TEAM = 'RESET_USER_TEAM';
+export const resetUserTeam = (hero) => ({
+  type: RESET_USER_TEAM
+})
+
 // Async
 export const fetchUserTeams = () => {
   return (dispatch) => {
     dispatch(fetchUserTeamsRequest());
-    fetch(`${API_BASE_URL}/api/teamlist`)
+    fetch(`${API_BASE_URL}/api/user/teams`)
+    .then(res => res.json())
+    .then(data => dispatch(fetchUserTeamsSuccess(data)))
+    .catch(err => dispatch(fetchUserTeamsError(err)))
+  }
+}
+
+export const saveUserCurrentTeam = (currentTeam) => {
+  return (dispatch) => {
+    fetch(`${API_BASE_URL}/api/user/teams`, {
+      method: 'POST',
+      headers:{
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({currentTeam})
+    })
+    .then(res => res.json())
+    .then(() => dispatch(fetchUserTeams()))
+    .catch(err => dispatch(fetchUserTeams(err)))
   }
 }

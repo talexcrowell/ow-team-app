@@ -1,4 +1,5 @@
-import {FETCH_USER_TEAMS_REQUEST, FETCH_USER_TEAMS_SUCCESS, FETCH_USER_TEAMS_ERROR, ADD_HERO_TO_USER_TEAM} from '../actions/user';
+import {FETCH_USER_TEAMS_REQUEST, FETCH_USER_TEAMS_SUCCESS, FETCH_USER_TEAMS_ERROR, ADD_HERO_TO_USER_TEAM, RESET_USER_TEAM} from '../actions/user';
+
 
 const initialState = {
   teams:[],
@@ -29,10 +30,16 @@ export default function userReducer(state=initialState, action){
       error: action.error
     }
   }
-  else if(action.tpye === ADD_HERO_TO_USER_TEAM){
+  else if(action.type === ADD_HERO_TO_USER_TEAM){
     return{
       ...state,
       currentTeam: [...state.currentTeam, action.hero]
+    }
+  }
+  else if(action.type === RESET_USER_TEAM){
+    return{
+      ...state,
+      currentTeam:[]
     }
   }
   return state;
