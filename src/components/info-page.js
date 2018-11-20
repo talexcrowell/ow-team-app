@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 
 function InfoPage (props){
   return(
@@ -25,7 +26,8 @@ function InfoPage (props){
         (stat tracking, record tracking,  Esports news etc.), 
         Overwatch Buddy is and will become a more incredible tool to propel you into the pro leagues!
         </p>
-        <a href='#'>Register</a>
+        <Link to='/register'>Register</Link>
+        <Link to='/'>Back</Link>
       </div>
     </div>
   )

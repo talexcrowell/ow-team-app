@@ -14,7 +14,18 @@ export class TeamBuild extends React.Component {
 
     return(
       <div>
-        <ul>{heroes}</ul>
+        <div>
+          <ul>{heroes}</ul>
+        </div>
+        <div>
+          <p>Current Team:</p>
+          <ul></ul>
+            <li>Damage:</li>
+            <li>Damage Per Second:</li>
+            <li>Health:</li>
+            <li>Healing Per Second:</li>
+            <li>Abilities:</li>
+        </div>
       </div>
     )
   }

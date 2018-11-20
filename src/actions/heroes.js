@@ -18,6 +18,7 @@ export const fetchHeroesError = (error) => ({
   error
 });
 
+
 //Async functions
 export const fetchHeroes = () => {
   return (dispatch) => {

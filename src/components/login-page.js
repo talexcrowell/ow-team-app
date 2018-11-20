@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 
 function LoginPage (props) {
   return (
@@ -11,6 +12,7 @@ function LoginPage (props) {
         <label>Password</label>
         <input></input>
       </div>
+      <Link to='/'>Back</Link>
     </div>
   )
 }
