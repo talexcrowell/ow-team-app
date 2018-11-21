@@ -50,7 +50,7 @@ export class TeamBuild extends React.Component {
           {buildError}
           <ul>{currentTeam}</ul>
           <ul>
-            <li>Damage:</li>
+            <li>Damage: </li>
             <li>Damage Per Second:</li>
             <li>Health:</li>
             <li>Healing Per Second:</li>
