@@ -23,7 +23,7 @@ export const fetchHeroesError = (error) => ({
 export const fetchHeroes = () => {
   return (dispatch) => {
     dispatch(fetchHeroesRequest());
-    fetch(`${API_BASE_URL}/api/teamlist`)
+    fetch(`${API_BASE_URL}/api/heroes`)
     .then(res => res.json())
     .then(data => dispatch(fetchHeroesSuccess(data)))
     .catch(error => dispatch(fetchHeroesError(error)))

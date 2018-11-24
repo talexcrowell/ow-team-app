@@ -55,3 +55,19 @@ export const saveUserCurrentTeam = (currentTeam) => {
     .catch(err => dispatch(fetchUserTeams(err)))
   }
 }
+
+export const registerUser = user => {
+  return dispatch => {
+    fetch(`${API_BASE_URL}/users`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(user)
+    })
+      .then(res => res.json())
+      .catch(err => {
+        console.log(err)
+      });
+  };
+};
