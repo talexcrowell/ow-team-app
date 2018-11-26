@@ -8,7 +8,7 @@ import requiresLogin from '../requires-login';
 export class TeamBuild extends React.Component {
   componentDidMount() {
     this.props.dispatch(fetchHeroes());
-    // this.props.dispatch(fetchUserTeams());
+    this.props.dispatch(fetchUserTeams());
   }
 
   render() {
@@ -77,6 +77,10 @@ export class TeamBuild extends React.Component {
         </li>
     ));
 
+    const userTeams = this.props.userTeams.map((team, index) => (
+      <li key={index}>{team.heroName}</li>
+    ));
+
     return(
       <div>
         <Link to='/dashboard'>Back To Home</Link>
@@ -100,7 +104,7 @@ export class TeamBuild extends React.Component {
         </section>
         <section>
           <h3>Your Other Builds</h3>
-          <ul></ul>
+          <ul>{userTeams}</ul>
         </section>
       </div>
     )
@@ -111,7 +115,8 @@ export class TeamBuild extends React.Component {
 function mapStateToProps(state){
   return{
     heroes: state.heroes.heroes,
-    currentTeam: state.user.currentTeam
+    currentTeam: state.user.currentTeam,
+    userTeams: state.user.teams
   }
 }
 

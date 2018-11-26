@@ -9,11 +9,11 @@ function LoginPage (props) {
   }
 
   return (
-    <div>
+    <section className='login'>
       <h2>Overwatch Buddy</h2>
       <LoginForm />
-      <Link to='/'>Back</Link>
-    </div>
+      <Link to='/'><button>Back</button></Link>
+    </section>
   )
 }
 

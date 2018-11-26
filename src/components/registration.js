@@ -5,17 +5,14 @@ import RegistrationForm from './registration-form';
 import './registration.css';
 
 
-export function RegistrationPage (props){
+function RegistrationPage (props){
   if(props.loggedIn){
     return <Redirect to='/dashboard' />
   }
   
   return (
-    <div>
-      <h2>Overwatch Buddy</h2>
+    <div className='registration'>
       <RegistrationForm />
-      <Link to='/'>Back</Link> || 
-      <Link to='/login'>Already registered?</Link>
     </div>
   );
 }

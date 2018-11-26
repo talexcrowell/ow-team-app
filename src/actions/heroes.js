@@ -1,5 +1,6 @@
 import { API_BASE_URL } from '../config';
 
+
 //Sync functions
 export const FETCH_HEROES_REQUEST = 'FETCH_HEROES_REQUEST';
 export const fetchHeroesRequest = () => ({
@@ -21,9 +22,17 @@ export const fetchHeroesError = (error) => ({
 
 //Async functions
 export const fetchHeroes = () => {
-  return (dispatch) => {
+  return (dispatch, getState) => {
     dispatch(fetchHeroesRequest());
-    fetch(`${API_BASE_URL}/api/heroes`)
+    const authToken = getState().auth.authToken;
+    fetch(`${API_BASE_URL}/api/heroes`,{
+      method: 'GET',
+      headers:{
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${authToken}`
+      }
+    })
     .then(res => res.json())
     .then(data => dispatch(fetchHeroesSuccess(data)))
     .catch(error => dispatch(fetchHeroesError(error)))

@@ -8,7 +8,7 @@ export const fetchUserTeamsRequest = () => ({
 
 export const FETCH_USER_TEAMS_SUCCESS = 'FETCH_USER_TEAMS_SUCCESS';
 export const fetchUserTeamsSuccess = (teams) => ({
-  type: FETCH_USER_TEAMS_REQUEST,
+  type: FETCH_USER_TEAMS_SUCCESS,
   teams
 });
 
@@ -31,9 +31,15 @@ export const resetUserTeam = (hero) => ({
 
 // Async
 export const fetchUserTeams = () => {
-  return (dispatch) => {
+  return (dispatch, getState) => {
     dispatch(fetchUserTeamsRequest());
-    fetch(`${API_BASE_URL}/api/teams`)
+    const authToken = getState().auth.authToken;
+    fetch(`${API_BASE_URL}/api/teams`, {
+      method: 'GET',
+      headers:{
+        Authorization: `Bearer ${authToken}`
+      }
+    })
     .then(res => res.json())
     .then(data => dispatch(fetchUserTeamsSuccess(data)))
     .catch(err => dispatch(fetchUserTeamsError(err)))
@@ -41,12 +47,14 @@ export const fetchUserTeams = () => {
 }
 
 export const saveUserCurrentTeam = (currentTeam) => {
-  return (dispatch) => {
+  return (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
     fetch(`${API_BASE_URL}/api/teams`, {
       method: 'POST',
       headers:{
         Accept: 'application/json',
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${authToken}`
       },
       body: JSON.stringify({currentTeam})
     })

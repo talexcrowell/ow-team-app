@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import { login } from '../actions/authentication';
+import './login.css';
 
 class LoginForm extends React.Component {
   onSubmit(e) {
@@ -13,7 +14,7 @@ class LoginForm extends React.Component {
   }
   render(){
     return (
-      <form onSubmit={(e) => {
+      <form className='loginform'onSubmit={(e) => {
       e.preventDefault();
       this.onSubmit(e);}}>
         <label>Username</label>

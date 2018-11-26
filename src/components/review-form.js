@@ -8,8 +8,7 @@ class ReviewForm extends React.Component {
   onSubmit(e) {
     const newTeam ={
       name: e.target.teamName.value,
-      team: this.props.currentTeam,
-      userId: this.props.userId
+      team: this.props.currentTeam
     };
     console.log(newTeam);
     return this.props.dispatch(saveUserCurrentTeam(newTeam));
@@ -57,27 +56,23 @@ class ReviewForm extends React.Component {
     }
   
   return(
-    <div>
-      <Link to='/dashboard'>Back To Home</Link>
-      <form className="current-build" onSubmit={(e)=> {
-        e.preventDefault();
-        this.onSubmit(e);
-      }}>
-        <label htmlFor="teamName">Build Name</label>
-        <input name= "teamName" placeholder='Team Name...'></input>
-        <ul>{currentTeam}</ul>
-        <ul>
-          <li>Damage:{dmg}</li>
-          <li>Damage Per Second:{dps}</li>
-          <li>Health:{health}</li>
-          <li>Healing Per Second:{hps}</li>
-          <li>Abilities:</li>
-        </ul>
-        <Link to='/build' ><button>Edit Build</button></Link>
-        <button>Save Build</button>
-      </form>
-    </div>
-    
+    <form className="current-build" onSubmit={(e)=> {
+      e.preventDefault();
+      this.onSubmit(e);
+    }}>
+      <label htmlFor="teamName">Build Name</label>
+      <input name= "teamName" placeholder='Team Name...'></input>
+      <ul>{currentTeam}</ul>
+      <ul>
+        <li>Damage:{dmg}</li>
+        <li>Damage Per Second:{dps}</li>
+        <li>Health:{health}</li>
+        <li>Healing Per Second:{hps}</li>
+        <li>Abilities:</li>
+      </ul>
+      <Link to='/build' ><button>Edit Build</button></Link>
+      <button>Save Build</button>
+    </form>
   )
   }
 }
@@ -85,7 +80,6 @@ class ReviewForm extends React.Component {
 function mapStateToProps(state){
   return{
     currentTeam: state.user.currentTeam,
-    userId: state.auth.currentUser.id
   }
 }
 

@@ -24,7 +24,7 @@ class Dashboard extends React.Component {
       )
     }
     const userTeams = this.props.teams.map((team, index) => (
-      <li key={index}>{team}</li>
+      <li key={index}>{team.name}</li>
     ));
 
 
@@ -34,6 +34,7 @@ class Dashboard extends React.Component {
         <button onClick={() => this.logout()}>Logout</button>
         <Link to='/build' ><button>Build A New Team</button></Link>
         <section className="user-teams">
+          <label>Your Builds</label>
           <ul>{userTeams}</ul>
         </section>
       </div>  

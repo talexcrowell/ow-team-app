@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import { registerUser } from '../actions/user';
 import { login } from '../actions/authentication';
+import './registration.css';
 
 class RegistrationForm extends React.Component {
   onSubmit(e) {
@@ -20,24 +21,22 @@ class RegistrationForm extends React.Component {
   render() {
 
     return (
-      <div>
-        <h2>Overwatch Buddy</h2>
-        <form className='regForm' onSubmit={(e)=> {
-          e.preventDefault();
-          this.onSubmit(e);
-          }}>
-          <h3>Register</h3>
-          <label htmlFor='regEmail'>Email</label>
-          <input type='text' name='regEmail'></input> <br/>
-          <label htmlFor='regUsername'>Username</label>
-          <input type='text' name='regUsername'></input> <br/>
-          <label htmlFor='regPassword'>Password</label>
-          <input type='password' name='regPassword'></input> <br/>
-          <button>Register</button>
-        </form>
-        <Link to='/'>Back</Link> || 
-        <Link to='/login'>Already registered?</Link>
-      </div>
+      <form className='regForm' onSubmit={(e)=> {
+        e.preventDefault();
+        this.onSubmit(e);
+        }}>
+        <h2>OverwatchBuddy</h2>
+        <h3>Registration</h3>
+        <label htmlFor='regEmail'>Email</label>
+        <input type='text' name='regEmail'></input>
+        <label htmlFor='regUsername'>Username</label>
+        <input type='text' name='regUsername'></input> <br/>
+        <label htmlFor='regPassword'>Password</label>
+        <input type='password' name='regPassword'></input> <br/>
+        <button>Register</button> <br/>
+        <Link to='/'><button>Back</button></Link>
+        <Link to='/login'><button>Already registered?</button></Link>
+      </form>
     )
   }
 }
