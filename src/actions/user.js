@@ -33,7 +33,7 @@ export const resetUserTeam = (hero) => ({
 export const fetchUserTeams = () => {
   return (dispatch) => {
     dispatch(fetchUserTeamsRequest());
-    fetch(`${API_BASE_URL}/api/user/teams`)
+    fetch(`${API_BASE_URL}/api/teams`)
     .then(res => res.json())
     .then(data => dispatch(fetchUserTeamsSuccess(data)))
     .catch(err => dispatch(fetchUserTeamsError(err)))
@@ -42,7 +42,7 @@ export const fetchUserTeams = () => {
 
 export const saveUserCurrentTeam = (currentTeam) => {
   return (dispatch) => {
-    fetch(`${API_BASE_URL}/api/user/teams`, {
+    fetch(`${API_BASE_URL}/api/teams`, {
       method: 'POST',
       headers:{
         Accept: 'application/json',
@@ -57,8 +57,9 @@ export const saveUserCurrentTeam = (currentTeam) => {
 }
 
 export const registerUser = user => {
+  console.log(user);
   return dispatch => {
-    fetch(`${API_BASE_URL}/users`, {
+    fetch(`${API_BASE_URL}/api/users`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json'

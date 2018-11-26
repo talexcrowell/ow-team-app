@@ -1,0 +1,26 @@
+.landing-page {
+  display: inline-block;
+  background-color: white;
+  width: 300px;
+  height: 100px;
+  margin: 50px;
+  border: 1px black solid;
+  border-radius: 4px;
+}
+
+h2 {
+  background-color: white;
+}
+
+section, a {
+  background-color: white;
+}
+
+button {
+  background-color: orange;
+  border-radius: 4px;
+  border: 1px grey solid;
+  padding: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+}

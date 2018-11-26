@@ -1,20 +1,27 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
+import LoginForm from './login-form';
 
 function LoginPage (props) {
+  if(props.loggedIn){
+    return <Redirect to='/dashboard' />
+  }
+
   return (
     <div>
       <h2>Overwatch Buddy</h2>
-      <div>
-        <label>Username</label>
-        <input></input>
-        <label>Password</label>
-        <input></input>
-      </div>
+      <LoginForm />
       <Link to='/'>Back</Link>
     </div>
   )
 }
 
-export default connect()(LoginPage);
+function mapStateToProps(state){
+  return{
+    loggedIn: state.auth.currentUser !== null
+  }
+}
+
+
+export default connect(mapStateToProps)(LoginPage);

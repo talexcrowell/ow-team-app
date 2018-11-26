@@ -7,17 +7,15 @@ import LandingPage from './components/landing-page';
 import InfoPage from './components/info-page';
 import LoginPage from './components/login-page';
 import Dashboard from './components/dashboard';
-import RegistrationForm from './components/registration';
+import RegistrationForm from './components/registration-form';
 import BuildReview from './components/build-review';
 
 class App extends Component {
-  handleSubmit(e){
-    e.preventDefault();
-  }
+ 
   render() {
     return (
       <Router>  
-        <div className="App" onClick={e => this.handleSubmit(e)}>
+        <div className="App" >
             <Route exact path="/" component={LandingPage} />
             <Route exact path="/info" component ={InfoPage} />
             <Route exact path="/register" component ={RegistrationForm} />

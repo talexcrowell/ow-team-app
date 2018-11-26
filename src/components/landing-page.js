@@ -1,18 +1,29 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
+import './landing-page.css'
 
 function LandingPage (props){
+  if(props.loggedIn){
+    return <Redirect to='/dashboard' />
+  }
+  
   return(
-    <div>
+    <div className='landing-page'>
       <h2>Overwatch Buddy</h2>
-      <div>
-        <Link to='/login'>Login</Link>
-        <Link to='/register'>Register</Link>
-        <Link to='/info'>More Info</Link>
-      </div>
+      <section className='navlinks'>
+        <Link to='/login'><button>Login</button></Link>
+        <Link to='/register'><button>Register</button></Link>
+        <Link to='/info'><button>More Info</button></Link>
+      </section>
     </div>
   )
 }
 
-export default connect()(LandingPage);
+function mapStateToProps(state){
+  return{
+    loggedIn: state.auth.loggedIn
+  }
+}
+
+export default connect(mapStateToProps)(LandingPage);

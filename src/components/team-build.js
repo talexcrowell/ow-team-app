@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import {fetchHeroes} from '../actions/heroes';
 import {fetchUserTeams, addHeroToUserTeam, resetUserTeam} from '../actions/user';
+import requiresLogin from '../requires-login';
 
 export class TeamBuild extends React.Component {
   componentDidMount() {
@@ -114,4 +115,4 @@ function mapStateToProps(state){
   }
 }
 
-export default connect(mapStateToProps)(TeamBuild);
+export default requiresLogin()(connect(mapStateToProps)(TeamBuild));
