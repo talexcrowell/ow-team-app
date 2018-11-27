@@ -5,6 +5,8 @@ import requiresLogin from '../requires-login';
 import {fetchUserTeams} from  '../actions/user';
 import { clearAuthToken } from '../local-storage';
 import {clearAuth} from '../actions/authentication';
+import HeaderBar from './header-bar';
+import './dashboard.css';
 
 class Dashboard extends React.Component {
   componentDidMount() {
@@ -24,17 +26,16 @@ class Dashboard extends React.Component {
       )
     }
     const userTeams = this.props.teams.map((team, index) => (
-      <li key={index}>{team.name}</li>
+      <li key={index}><p>{team.name}</p></li>
     ));
 
 
     return(
       <div className='dashboard'>
-        <h3>Welcome {this.props.currentUser.username}</h3>
-        <button onClick={() => this.logout()}>Logout</button>
-        <Link to='/build' ><button>Build A New Team</button></Link>
-        <section className="user-teams">
-          <label>Your Builds</label>
+        <HeaderBar />
+        <br/>
+        <section className="userteams">
+          <label className='your-build'>Your Builds</label>
           <ul>{userTeams}</ul>
         </section>
       </div>  

@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import {fetchHeroes} from '../actions/heroes';
 import {fetchUserTeams, addHeroToUserTeam, resetUserTeam} from '../actions/user';
 import requiresLogin from '../requires-login';
+import './team-build.css'
 
 export class TeamBuild extends React.Component {
   componentDidMount() {
@@ -18,40 +19,32 @@ export class TeamBuild extends React.Component {
       buildError = <div>You have reached the maximimum number of heroes!</div>
     }
 
-    let dmg = <div>0</div>;
     let dmgSum = 0;
     if(this.props.currentTeam.length >0){
       for(let i = 0; i < this.props.currentTeam.length; i++){
         dmgSum += this.props.currentTeam[i].damage;
       }
-      dmg = <div>{dmgSum}</div>;
     }
 
-    let dps = <div>0</div>;
     let dpsSum = 0;
     if(this.props.currentTeam.length >0){
       for(let i = 0; i < this.props.currentTeam.length; i++){
         dpsSum += this.props.currentTeam[i].dps;
       }
-      dps = <div>{dpsSum}</div>;
     }
 
-    let health = <div>0</div>;
     let healthSum = 0;
     if(this.props.currentTeam.length >0){
       for(let i = 0; i < this.props.currentTeam.length; i++){
         healthSum += this.props.currentTeam[i].health;
       }
-      health= <div>{healthSum}</div>;
     }
 
-    let hps = <div>0</div>;
     let hpsSum = 0;
     if(this.props.currentTeam.length >0){
       for(let i = 0; i < this.props.currentTeam.length; i++){
         hpsSum += this.props.currentTeam[i].hps;
       }
-      hps = <div>{hpsSum}</div>;
     }
 
 
@@ -66,45 +59,52 @@ export class TeamBuild extends React.Component {
     // }
 
 
-    const currentTeam = this.props.currentTeam.map((team, index) => (
-      <li key={index}>{team.heroName}</li>
+    const currentTeam = this.props.currentTeam.map((hero, index) => (
+      <li className='hero-current' key={index}>
+        <img className='hero-image-current' src={hero.image} alt={hero.heroName}></img>
+        <p>{hero.heroName}</p>
+        <p>Role: {hero.role}</p>
+      </li>
     ));
     
     const heroes = this.props.heroes.map((hero, index) => (
-      <li key={index}>
-        {hero.heroName}
+      <li className='hero' key={index}>
+        <img className='heroimage' src={hero.image} alt={hero.heroName}></img>
+        <p>{hero.heroName}</p>
+        <p>Role: {hero.role}</p>
         <button onClick={() => this.props.dispatch(addHeroToUserTeam(this.props.heroes[index]))}>+</button>
         </li>
     ));
 
     const userTeams = this.props.userTeams.map((team, index) => (
-      <li key={index}>{team.heroName}</li>
+      <li key={index}>{team.name}</li>
     ));
 
     return(
-      <div>
-        <Link to='/dashboard'>Back To Home</Link>
-        <div className="hero-roster">
-          <h3>Hero Roster</h3>
+      <div className="team-build">
+        <section className="userteams-build">
+          <Link to='/dashboard'><button>Dashboard</button></Link>
+          <label className='your-build'>Your Builds</label>
+          <ul>{userTeams}</ul>
+        </section>
+        <section className="hero-roster">
+          <h3 className='roster-label'>Hero Roster</h3>
           <ul>{heroes}</ul>
-        </div>
+        </section>
         <section className="current-build">
-          <h3>Current Team</h3>
+          <h3 className='current-label'>Current Team</h3>
           {buildError}
-          <ul>{currentTeam}</ul>
-          <ul>
-            <li>Damage: {dmg} </li>
-            <li>Damage Per Second: {dps}</li>
-            <li>Health: {health}</li>
-            <li>Healing Per Second: :{hps}</li>
-            <li>Abilities:</li>
+          <ul className='current-team'>{currentTeam}</ul>
+          <ul className='stats'>
+            <li>Damage: {dmgSum} </li>
+            <li>Damage Per Second: {dpsSum}</li>
+            <li>Health: {healthSum}</li>
+            <li>Healing Per Second: {hpsSum}</li>
           </ul>
+          <ul className='abilties'></ul>
+          <ul className='ultimates'></ul>
           <button onClick={() => this.props.dispatch(resetUserTeam())}>Reset</button>
           <Link to='/review' ><button>Review Build</button></Link>
-        </section>
-        <section>
-          <h3>Your Other Builds</h3>
-          <ul>{userTeams}</ul>
         </section>
       </div>
     )

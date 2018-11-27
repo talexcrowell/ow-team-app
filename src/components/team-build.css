@@ -1,0 +1,85 @@
+.team-build{
+  background-color: white;
+  border: 1px white solid;
+  border-radius: 4px;
+  display: inline-block;
+  width:960px;
+}
+
+.hero {
+  background-color: white;
+  width: 180px;
+  border-radius: 6px;
+  padding: 5px;
+  float: left;
+}
+
+.hero-current{
+  background-color: white;
+  border-radius: 6px;
+  padding: 5px;
+  width: 180px;
+  float: left;
+}
+
+.hero-current, .hero-image-current{
+  /* width: 40%;
+  height: auto; */
+}
+
+.hero, p{
+  margin-top:2.5px;
+  margin-bottom:2.5px;
+}
+
+.hero, .heroimage {
+  background-color: white;
+
+}
+
+.current-build {
+  display: inline-block;
+  background-color: white;
+  width: 760px;
+  margin-left: 200px;
+  text-align: center;
+  position: fixed;
+  bottom:0px;
+  left:450px;
+}
+
+.hero-roster{
+  display: inline-block;
+  width: 780px;
+  background-color: white;
+  margin-left: 180px;
+  margin-bottom:200px;
+}
+
+.hero-roster, .roster-label{
+  text-align:center;
+}
+
+.userteams-build {
+  background-color: white;
+  display: inline-block;
+  width: 160px;
+  height: 100%;
+  left: 475px;
+  position:fixed;
+}
+
+.userteams, .your-build {
+  text-align: center;
+  width: 160px;
+}
+
+.stats{
+  text-align: left;
+  width: 200px;
+  font-size: 18px;
+}
+
+.current-team{
+  width:600px;
+}
