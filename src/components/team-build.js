@@ -47,7 +47,7 @@ export class TeamBuild extends React.Component {
       }
     }
 
-    // if(this.props.currentTeam.length >= 2){
+    // if(this.props.currentTeam.length >= 1){
     //   for(let i=0; i < this.props.currentTeam.length; i++){
     //     for(let j=1; j < this.props.currentTeam.length; j++){
     //       if(this.props.currentTeam[i].heroName === this.props.currentTeam[j].heroName){
@@ -60,8 +60,8 @@ export class TeamBuild extends React.Component {
     const currentTeam = this.props.currentTeam.map((hero, index) => (
       <li className='hero-current' key={index}>
         <img className='hero-image-current' src={hero.image} alt={hero.heroName}></img>
-        <p className='hero-name-current'>{hero.heroName}</p>
-        <p className='hero-role-current'>{hero.role}</p>
+        <p className='hero-name'>{hero.heroName}</p>
+        <p className='hero-role'>{hero.role}</p>
       </li>
     ));
     
@@ -74,14 +74,30 @@ export class TeamBuild extends React.Component {
         </li>
     ));
 
+    const teamImages = this.props.userTeams.reduce((images, team) => {
+      return [...team.team.map(hero => <li key={hero.heroName} className='bar-hero'>
+                                        <img src={hero.image} alt={hero.heroName} className='bar-hero-image'></img>
+                                      </li>)];
+    }, []);
+
     const userTeams = this.props.userTeams.map((team, index) => (
-      <li key={index}>{team.name}</li>
+      <li key={index}>
+        <section className='bar-team'>
+          <label className='bar-team-name'>{team.name}</label>
+          <ul className='bar-team-roster'>{teamImages}</ul>
+        </section>
+      </li>
     ));
 
     const ultimates = this.props.currentTeam.map((hero, index) => (
       <li key={index}>{hero.ultimate.ultName}</li>
     ));
 
+    const abilities = this.props.currentTeam.reduce((abilities, hero) => {
+      return [...abilities, ...hero.abilities.map((ability, index) => <li key={hero.heroName + index} className='ability'>{ability}</li>)];
+    }, []);
+
+    
     return(
       <div className="team-build">
         <section className="userteams-build">
@@ -106,7 +122,7 @@ export class TeamBuild extends React.Component {
             </section>
             <section className='abilities'>
               <h4>Abilities</h4>
-              <ul className='abilities-list'></ul>
+              <ul className='abilities-list'>{abilities}</ul>
             </section>
             <section>
               <button onClick={() => this.props.dispatch(resetUserTeam())}>Reset</button>

@@ -7,8 +7,9 @@ import requiresLogin from '../requires-login';
 class ReviewForm extends React.Component {
   onSubmit(e) {
     const newTeam ={
-      name: e.target.teamName.value,
-      team: this.props.currentTeam
+      name: e.target.buildName.value,
+      team: this.props.currentTeam,
+      notes: e.target.userNotes.value
     };
     console.log(newTeam);
     return this.props.dispatch(saveUserCurrentTeam(newTeam));
@@ -23,15 +24,13 @@ class ReviewForm extends React.Component {
   </li>
   ));
 
-  let dmg = <div>0</div>;
     let dmgSum = 0;
     if(this.props.currentTeam.length >0){
       for(let i = 0; i < this.props.currentTeam.length; i++){
         dmgSum += this.props.currentTeam[i].damage;
       }
     }
-
-    let dps = <div>0</div>;
+    
     let dpsSum = 0;
     if(this.props.currentTeam.length >0){
       for(let i = 0; i < this.props.currentTeam.length; i++){
@@ -53,9 +52,26 @@ class ReviewForm extends React.Component {
       }  
     }
 
+    const abilities = this.props.currentTeam.reduce((abilities, hero) => {
+      return [...abilities, ...hero.abilities.map((ability, index) => <li key={hero.heroName + index} className='review-ability'>{ability}</li>)];
+    }, []);
+
     const ultimates = this.props.currentTeam.map((hero, index) => (
       <li key={index} className='review-ult'>{hero.ultimate.ultName}</li>
     ));
+
+    let buildName;
+    if(!this.props.teamName){
+      buildName=<section className='add-name'>
+                  <label htmlFor="buildName" className="buildName-label">Name Your Build:</label>
+                  <input name= "buildName" className="buildName" placeholder='ex. Dive Comp...'></input>
+                </section>
+    }
+    buildName = <section className='edit-name'>
+    <label htmlFor="buildName" className="buildName-label">Name Your Build:</label>
+    <input name= "buildName" className="buildName" placeholder='ex. Dive Comp...'>{this.props.teamName}</input>
+  </section>
+
   
   return(
     <form className="review-build" onSubmit={(e)=> {
@@ -63,8 +79,7 @@ class ReviewForm extends React.Component {
       this.onSubmit(e);
     }}>
       <section className="review-build">
-        <label htmlFor="buildName" className="buildName-label">Name Your Build:</label>
-        <input name= "buildName" className="buildName" placeholder='ex. Dive Comp...'></input>
+        {buildName}
         <section className='review-team-roster'>
           <ul className='review-team'>{currentTeam}</ul>
         </section> 
@@ -76,12 +91,12 @@ class ReviewForm extends React.Component {
             <li className='review-stat'>Healing Per Second: {hpsSum}</li>
           </ul>
           <section className='team-notes'>
-            <label htmlFor='user-notes' className='notes-label'>Notes</label>
-            <textarea name='user-notes' className='user-notes'></textarea>
+            <label htmlFor='userNotes' className='notes-label'>Notes</label>
+            <textarea name='userNotes' className='userNotes'></textarea>
           </section>
           <section className='review-abilities'>
             <h4>Abilities</h4>
-            <ul className='review-abilities-list'><li className="review-ability">Gripping Hook</li><li className="review-ability">Gripping Hook</li><li className="review-ability">Gripping Hook</li><li className="review-ability">Gripping Hook</li><li className="review-ability">Gripping Hook</li><li className="review-ability">Gripping Hook</li><li className="review-ability">Gripping Hook</li><li className="review-ability">Gripping Hook</li><li className="review-ability">Gripping Hook</li><li className="review-ability">Gripping Hook</li><li className="review-ability">Gripping Hook</li><li className="review-ability">Gripping Hook</li><li className="review-ability">Gripping Hook</li><li className="review-ability">Gripping Hook</li><li className="review-ability">Gripping Hook</li><li className="review-ability">Gripping Hook</li><li className="review-ability">Gripping Hook</li><li className="review-ability">Gripping Hook</li><li className="review-ability">Gripping Hook</li></ul>
+            <ul className='review-abilities-list'>{abilities}</ul>
           </section>
           <section className='review-ultimates'>
             <h4>Ultimates</h4>
@@ -99,6 +114,7 @@ class ReviewForm extends React.Component {
 function mapStateToProps(state){
   return{
     currentTeam: state.user.currentTeam,
+    teamName: state.user.teamName
   }
 }
 

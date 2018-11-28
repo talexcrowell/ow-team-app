@@ -30,6 +30,12 @@ export const resetUserTeam = (hero) => ({
   type: RESET_USER_TEAM
 })
 
+export const VIEW_USER_TEAM = 'VIEW_USER_TEAM';
+export const viewUserTeam = (team) => ({
+  type: VIEW_USER_TEAM,
+  team
+})
+
 // Async
 export const fetchUserTeams = () => {
   return (dispatch, getState) => {

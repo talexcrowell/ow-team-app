@@ -17,10 +17,10 @@ h3{
   display:inline-block;
 }
 
-.userteams {
-  background-color: white;
+.dash-userteams {
+  background-color: gainsboro;
   display: inline-block;
-  width: 160px;
+  width: 958px;
   float: left;
   position: 0px;
 }
@@ -37,11 +37,103 @@ h3{
   float: right;
 }
 
-.your-build {
+.dash-your-build {
   text-align: center;
   background-color: white;
   font-weight: bold;
-  width: 160px;
+  width: 960px;
+  font-size: 30px;
+  display: block;
+  font-weight: bold;
+  font-style: italic;
+  padding: 10px;
+  border: 1px gainsboro solid;
+}
+
+.dash-hero{
+  background-color: white;
+  border: 1px gainsboro solid;
+  width: 120px;
+  height: 350px;
+  border-radius: 6px;
+  padding: 2.5px;
+  float: left;
+}
+
+.dash-hero-image{
+  height: auto;
+  background-color: white;
+  width:110px;
+}
+
+.dash-hero-name{
+  width: 110px;
+  text-align: center;
+}
+
+.dash-stats-label{
+  float:left;
+  background-color: white;
+  font-size: 20px;
+  width: 225px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 2.5px;
+  border-radius: 4px;
+  border: 1px gainsboro solid;
+}
+
+.dash-stats{
+  text-align: left;
+  float:left;
+  font-size: 16px;
+  width: 225px;
+  font-weight: bold;
+  border: 1px gainsboro solid;
+}
+
+.dash-stat{
+  padding: 5px;
+}
+
+.dash-team{
+  border: 1px gainsboro solid;
+  background-color: white;
+  border-radius: 4px;
+  height: 405px;
+  text-align: center;
+  margin-top:10px;
+  margin-bottom: 10px;
+  float:left;
+}
+
+.dash-team-roster{
+ 
+  height: 350px;
+  width: 730px;
+  float:left;
+  text-align: center;
+}
+
+.dash-team-name{
+  display: block;
+  font-size: 24px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 10px;
+  background-color: white;
+  border-radius: 4px;
+  border: 1px gainsboro solid;
+}
+
+.dash-team-notes{
+  display:inline-block;
+  width: 225px;
+  height: 155px;
+  margin:0;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px gainsboro solid;
 }
 
 ul{

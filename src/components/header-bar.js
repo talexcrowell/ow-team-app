@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Link, Redirect} from 'react-router-dom';
 import requiresLogin from '../requires-login';
+import { resetUserTeam } from '../actions/user';
 
 function HeaderBar (props){
   if(!props.loggedIn){
@@ -14,7 +15,7 @@ function HeaderBar (props){
     <section className='headerbar'>
       <h3>Welcome {props.currentUser.username}</h3>
       <div className='action-buttons'>
-        <Link to='/build' ><button className='build'>Build A New Team</button></Link>  
+        <Link to='/build' ><button className='build' onClick={() => props.dispatch(resetUserTeam())}>Build A New Team</button></Link>  
         <button className='logout' onClick={() =>props.logout()}>Logout</button>
       </div>
     </section>

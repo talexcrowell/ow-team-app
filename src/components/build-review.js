@@ -1,14 +1,30 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
 import requiresLogin from '../requires-login';
 import ReviewForm from './review-form';
 import './build-review.css';
 
 function BuildReview (props) {
+
+  if(props.savingTeam){
+    return (
+      <Redirect to='/dashboard' />
+    )
+  }
+
+  const teamImages = props.userTeams.reduce((images, team) => {
+    return [...team.team.map(hero => <li key={hero.heroName} className='bar-hero'>
+                                      <img src={hero.image} alt={hero.heroName} className='bar-hero-image'></img>
+                                    </li>)];
+  }, []);
+
   const userTeams = props.userTeams.map((team, index) => (
     <li key={index}>
-     <p className='user-team-name'>{team.name}</p> 
+      <section className='bar-team'>
+        <label className='bar-team-name'>{team.name}</label>
+        <ul className='bar-team-roster'>{teamImages}</ul>
+      </section>
     </li>
   ));
 
@@ -27,7 +43,8 @@ function BuildReview (props) {
 function mapStateToProps(state){
   return{
     userTeams: state.user.teams,
-    currentTeam: state.user.currentTeam
+    currentTeam: state.user.currentTeam,
+    savingTeam: state.user.loading !== false
   }
 }
 

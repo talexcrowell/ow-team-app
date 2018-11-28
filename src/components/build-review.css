@@ -16,6 +16,10 @@
 
 .buildName-label{
   font-size: 20px;
+  float: left;
+  background-color: white;
+  margin: 5px;
+
 }
 
 .review-build {
@@ -92,7 +96,7 @@
   border: 1px gainsboro solid;
 }
 
-.review-abilties, .review-ability{
+.review-ability{
   display: inline-block;
   font-size: 13px;
   width:120px;
@@ -139,8 +143,14 @@
 
 .user-notes {
   resize: none;
+  float: left;
   width: 265px;
   min-height: 85px;
+}
+
+.notes-label{
+  width:270px;
+  display: inline;
 }
 
 .team-notes, .notes-label{

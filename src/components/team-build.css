@@ -32,14 +32,14 @@
 
 .hero-name, .hero-role{
   margin-top:2.5px;
-  width: 128px;
+  width: 120px;
   margin-bottom:2.5px;
   font-size: 12px;
 }
 
 .heroimage {
   background-color: white;
-  width: 130px;
+  width: 120px;
   height: auto;
 }
 
@@ -70,6 +70,7 @@
   width: 798px;
   margin-top: 0px;
   margin-bottom: 0px;
+  font-style: italic;
   border: 1px gainsboro solid;
 }
 
@@ -93,14 +94,14 @@
   display: inline-block;
   font-size: 18px;
   width: 540px;
-  padding:5px;
+  padding:10px;
   border: 1px gainsboro solid;
   clear:left;
   margin-top:0px;
 }
 
 .stats, .stat{
-  padding: 2.5px;
+  padding: 3px;
 }
 
 .lists-buttons{
@@ -110,16 +111,23 @@
 }
 
 .abilities {
+  display: inline-block;
   height: 200px;
+  width: 250px;
   margin-top: 0px;
   padding-bottom: 15px;
   border: 1px gainsboro solid;
+}
+
+.abilities-list{
+  margin-top: 5px;
 }
 
 .ability{
   display: inline-block;
   font-size: 13px;
   width:120px;
+  border: 1px gainsboro solid;
 }
 
 .ultimates{
@@ -146,10 +154,49 @@
 
 .your-build {
   display: inline-block;
+  background-color: white;
+  font-weight: bold;
   margin-top: 10px;
   text-align: center;
   width: 160px;
 }
+
+.bar-hero{
+  background-color: white;
+  width: 25px;
+  border-radius: 6px;
+  padding: 2.5px;
+  float: left;
+}
+
+.bar-hero-image{
+  background-color: white;
+  height: auto;
+  width: 25px;
+  border: 1px gainsboro solid;
+}
+
+.bar-team{
+  display:inline-block;
+  background-color: white;
+  border: 1px gainsboro solid;
+  border-radius: 4px;
+  height:75px;
+  width:160px;
+}
+
+.bar-team-name{
+  background-color: white;
+  font-weight: bold;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.bar-team-roster{
+  width: 158px;
+  height: 50px;
+}
+
 
 /* Error */
 .build-error{
