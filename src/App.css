@@ -34,4 +34,5 @@
 * {
   background-color: gainsboro;
   font-family: 'Noto Sans SC', sans-serif;
+  box-sizing: border-box;
 }

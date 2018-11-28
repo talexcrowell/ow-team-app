@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Link, Redirect} from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
 import requiresLogin from '../requires-login';
 import {fetchUserTeams} from  '../actions/user';
 import { clearAuthToken } from '../local-storage';
@@ -26,13 +26,16 @@ class Dashboard extends React.Component {
       )
     }
     const userTeams = this.props.teams.map((team, index) => (
-      <li key={index}><p>{team.name}</p></li>
+      <li key={index}>
+        <p className='team-name'>{team.name}</p>
+      
+      </li>
     ));
 
 
     return(
       <div className='dashboard'>
-        <HeaderBar />
+        <HeaderBar logout={()=>this.logout()} />
         <br/>
         <section className="userteams">
           <label className='your-build'>Your Builds</label>

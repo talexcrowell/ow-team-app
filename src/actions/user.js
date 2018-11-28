@@ -1,4 +1,5 @@
 import { API_BASE_URL } from '../config';
+import { login } from './authentication';
 
 //Sync
 export const FETCH_USER_TEAMS_REQUEST = 'FETCH_USER_TEAMS_REQUEST';
@@ -75,6 +76,7 @@ export const registerUser = user => {
       body: JSON.stringify(user)
     })
       .then(res => res.json())
+      .then(()=> dispatch(login(user.username, user.password)))
       .catch(err => {
         console.log(err)
       });

@@ -1,3 +1,5 @@
+/* Component Template */
+
 .team-build{
   background-color: white;
   border: 1px white solid;
@@ -6,80 +8,152 @@
   width:960px;
 }
 
-.hero {
-  background-color: white;
-  width: 180px;
-  border-radius: 6px;
-  padding: 5px;
-  float: left;
-}
-
-.hero-current{
-  background-color: white;
-  border-radius: 6px;
-  padding: 5px;
-  width: 180px;
-  float: left;
-}
-
-.hero-current, .hero-image-current{
-  /* width: 40%;
-  height: auto; */
-}
-
-.hero, p{
-  margin-top:2.5px;
-  margin-bottom:2.5px;
-}
-
-.hero, .heroimage {
-  background-color: white;
-
-}
-
-.current-build {
-  display: inline-block;
-  background-color: white;
-  width: 760px;
-  margin-left: 200px;
-  text-align: center;
-  position: fixed;
-  bottom:0px;
-  left:450px;
-}
+/* Hero-Roster Template */
 
 .hero-roster{
   display: inline-block;
-  width: 780px;
+  width: 798px;
   background-color: white;
-  margin-left: 180px;
-  margin-bottom:200px;
+  border: 1px gainsboro solid;
 }
 
 .hero-roster, .roster-label{
   text-align:center;
 }
 
+.hero {
+  background-color: white;
+  width: 130px;
+  height: 360px;
+  border-radius: 6px;
+  padding: 7px;
+  float: left;
+}
+
+.hero-name, .hero-role{
+  margin-top:2.5px;
+  width: 128px;
+  margin-bottom:2.5px;
+  font-size: 12px;
+}
+
+.heroimage {
+  background-color: white;
+  width: 130px;
+  height: auto;
+}
+
+
+/* Current-Team Template */
+
+.current-build {
+  display: inline-block;
+  background-color: white;
+  width: 800px;
+  margin-left: 160px;
+  text-align: center;
+  bottom:0px;
+  border: 1px gainsboro solid;
+}
+
+.current-team-roster{
+  width:540px;
+  display: inline-block;
+  height: 250px;
+  margin-left: 0;
+  border: 1px gainsboro solid;
+  padding: 10px;
+  float:left;
+}
+
+.current-label{
+  width: 798px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border: 1px gainsboro solid;
+}
+
+.hero-current{
+  background-color: white;
+  border-radius: 6px;
+  padding: 2.5px;
+  font-size: 14px;
+  width: 80px;
+  float: left;
+}
+
+.hero-current, .hero-image-current{
+  width: 80px;
+  height: auto;
+}
+
+.stats{
+  text-align: left;
+  float: left;
+  display: inline-block;
+  font-size: 18px;
+  width: 540px;
+  padding:5px;
+  border: 1px gainsboro solid;
+  clear:left;
+  margin-top:0px;
+}
+
+.stats, .stat{
+  padding: 2.5px;
+}
+
+.lists-buttons{
+  display: inline-block;
+  width: 250px;
+  float: right;
+}
+
+.abilities {
+  height: 200px;
+  margin-top: 0px;
+  padding-bottom: 15px;
+  border: 1px gainsboro solid;
+}
+
+.ability{
+  display: inline-block;
+  font-size: 13px;
+  width:120px;
+}
+
+.ultimates{
+  bottom: none;
+  margin-bottom: 0px;
+  height: 160px;
+  border: 1px gainsboro solid;
+}
+
+.ultimates, h4{
+  margin-top: 0px;
+  margin-bottom: 5px;
+  background-color: white;
+}
+
+/* User-Teams Template */
 .userteams-build {
   background-color: white;
   display: inline-block;
   width: 160px;
   height: 100%;
-  left: 475px;
-  position:fixed;
+  float: left;
 }
 
-.userteams, .your-build {
+.your-build {
+  display: inline-block;
+  margin-top: 10px;
   text-align: center;
   width: 160px;
 }
 
-.stats{
-  text-align: left;
-  width: 200px;
-  font-size: 18px;
-}
-
-.current-team{
-  width:600px;
+/* Error */
+.build-error{
+  background-color:red;
+  margin-bottom: 5px;
+  font-weight: bold;
 }

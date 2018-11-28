@@ -37,8 +37,10 @@ h3{
   float: right;
 }
 
-.userteams, .your-build {
+.your-build {
   text-align: center;
+  background-color: white;
+  font-weight: bold;
   width: 160px;
 }
 

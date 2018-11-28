@@ -16,7 +16,7 @@ export class TeamBuild extends React.Component {
     let buildError;
     if(this.props.currentTeam.length > 6){
       this.props.currentTeam.length = 6;
-      buildError = <div>You have reached the maximimum number of heroes!</div>
+      buildError = <div className='build-error'>You have reached the maximimum number of heroes!</div>
     }
 
     let dmgSum = 0;
@@ -47,7 +47,6 @@ export class TeamBuild extends React.Component {
       }
     }
 
-
     // if(this.props.currentTeam.length >= 2){
     //   for(let i=0; i < this.props.currentTeam.length; i++){
     //     for(let j=1; j < this.props.currentTeam.length; j++){
@@ -58,26 +57,29 @@ export class TeamBuild extends React.Component {
     //   }
     // }
 
-
     const currentTeam = this.props.currentTeam.map((hero, index) => (
       <li className='hero-current' key={index}>
         <img className='hero-image-current' src={hero.image} alt={hero.heroName}></img>
-        <p>{hero.heroName}</p>
-        <p>Role: {hero.role}</p>
+        <p className='hero-name-current'>{hero.heroName}</p>
+        <p className='hero-role-current'>{hero.role}</p>
       </li>
     ));
     
     const heroes = this.props.heroes.map((hero, index) => (
       <li className='hero' key={index}>
         <img className='heroimage' src={hero.image} alt={hero.heroName}></img>
-        <p>{hero.heroName}</p>
-        <p>Role: {hero.role}</p>
+        <p className='hero-name'>{hero.heroName}</p>
+        <p className='hero-role'>{hero.role}</p>
         <button onClick={() => this.props.dispatch(addHeroToUserTeam(this.props.heroes[index]))}>+</button>
         </li>
     ));
 
     const userTeams = this.props.userTeams.map((team, index) => (
       <li key={index}>{team.name}</li>
+    ));
+
+    const ultimates = this.props.currentTeam.map((hero, index) => (
+      <li key={index}>{hero.ultimate.ultName}</li>
     ));
 
     return(
@@ -94,17 +96,29 @@ export class TeamBuild extends React.Component {
         <section className="current-build">
           <h3 className='current-label'>Current Team</h3>
           {buildError}
-          <ul className='current-team'>{currentTeam}</ul>
+          <section className='current-team-roster'>
+            <ul className='current-team'>{currentTeam}</ul>
+          </section>
+          <section className='lists-buttons'>
+            <section className='ultimates'>
+              <h4>Ultimates</h4>
+              <ul className='ult-list'>{ultimates}</ul>
+            </section>
+            <section className='abilities'>
+              <h4>Abilities</h4>
+              <ul className='abilities-list'></ul>
+            </section>
+            <section>
+              <button onClick={() => this.props.dispatch(resetUserTeam())}>Reset</button>
+              <Link to='/review' ><button>Review Build</button></Link>
+            </section>
+          </section>  
           <ul className='stats'>
-            <li>Damage: {dmgSum} </li>
-            <li>Damage Per Second: {dpsSum}</li>
-            <li>Health: {healthSum}</li>
-            <li>Healing Per Second: {hpsSum}</li>
+            <li className='stat'>Damage: {dmgSum} </li>
+            <li className='stat'>Damage Per Second: {dpsSum}</li>
+            <li className='stat'>Health: {healthSum}</li>
+            <li className='stat'>Healing Per Second: {hpsSum}</li>
           </ul>
-          <ul className='abilties'></ul>
-          <ul className='ultimates'></ul>
-          <button onClick={() => this.props.dispatch(resetUserTeam())}>Reset</button>
-          <Link to='/review' ><button>Review Build</button></Link>
         </section>
       </div>
     )

@@ -18,7 +18,7 @@ export default function heroesReducer(state=initialState, action){
       ...state,
       loading: false,
       error: null,
-      heroes: [...action.heroes]
+      heroes: [...action.heroes],
     }
   }
   else if(action.type === FETCH_HEROES_ERROR){

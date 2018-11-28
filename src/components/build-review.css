@@ -1,0 +1,170 @@
+/* Component Template */
+
+.team-review{
+  background-color: white;
+  border: 1px white solid;
+  border-radius: 4px;
+  display: inline-block;
+  width:960px;
+}
+/* Review Team Template */
+.buildName{
+  float: left;
+  vertical-align: center;
+  font-size: 20px;
+}
+
+.buildName-label{
+  font-size: 20px;
+}
+
+.review-build {
+  display: inline-block;
+  background-color: white;
+  width: 795px;
+  margin-left: 0px;
+  text-align: center;
+  bottom:0px;
+  float: right;
+  border: 1px gainsboro solid;
+}
+
+.review-team-roster{
+  width: 795px;
+  display: inline-block;
+  height: auto;
+  margin-left: 0;
+  border: 1px gainsboro solid;
+  float:left;
+}
+
+.current-label{
+  width: 798px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border: 1px gainsboro solid;
+}
+
+.hero-review{
+  background-color: white;
+  border-radius: 6px;
+  padding: 2.5px;
+  width: 140px;
+  float: left;
+}
+
+.hero-review, .hero-image-review{
+  width: 120px;
+  height: auto;
+}
+
+.other-lists{
+  display: inline-block;
+  height: auto;
+  bottom: 0;
+  width: 795px;
+}
+
+.review-stats{
+  text-align: left;
+  height: auto;
+  float: left;
+  display: inline-block;
+  font-size: 18px;
+  width: 275px;
+  padding:5px;
+  margin-top:0px;
+  margin-bottom: 0px;
+  border: 1px gainsboro solid;
+}
+
+.review-stats, .review-stat{
+  padding: 2.5px;
+}
+
+
+.review-abilities {
+  display: inline-block;
+  height: auto;
+  width: 270px;
+  margin-top: 0px;
+  
+  border: 1px gainsboro solid;
+}
+
+.review-abilties, .review-ability{
+  display: inline-block;
+  font-size: 13px;
+  width:120px;
+  border: 1px gainsboro solid;
+}
+
+
+.review-ultimates{
+  display: inline-block;
+  margin-bottom: 50px;
+  width: 250px;
+  vertical-align: top;
+  
+}
+
+.review-ult-list{
+  height: auto;
+  width: 250px;
+  margin-top: 0px;
+}
+
+.review-ult{
+  padding: 5px;
+}
+
+.review-ultimates, h4{
+  margin-top: 0px;
+  margin-bottom: 5px;
+  background-color: white;
+}
+
+.team-notes {
+  text-align: left;
+  height: auto;
+  float: left;
+  clear:left;
+  display: inline-block;
+  font-size: 18px;
+  width: 270px;
+  margin-top:0px;
+  margin-bottom: 0px;
+  margin-left: 5px;
+}
+
+.user-notes {
+  resize: none;
+  width: 265px;
+  min-height: 85px;
+}
+
+.team-notes, .notes-label{
+  margin-top:0px;
+  background-color: white;
+}
+
+/* User-Teams Template */
+.userteams-build {
+  background-color: white;
+  display: inline-block;
+  width: 160px;
+  height: 100%;
+  float: left;
+}
+
+.userteams, .your-build {
+  text-align: center;
+  width: 160px;
+}
+
+/* Error */
+.build-error{
+  background-color:red;
+  margin-bottom: 5px;
+  font-weight: bold;
+}

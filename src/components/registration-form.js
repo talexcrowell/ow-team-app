@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
 import { registerUser } from '../actions/user';
 import { login } from '../actions/authentication';
 import './registration.css';
@@ -14,11 +14,13 @@ class RegistrationForm extends React.Component {
     };
     console.log(newUser);
     return this.props.dispatch(registerUser(newUser))
-      .then(() => this.props.dispatch(login(newUser.username, newUser.password)));
   }
   
   
   render() {
+    if(this.props.loggedIn){
+      return <Redirect to='/dashboard' />
+    }
 
     return (
       <form className='regForm' onSubmit={(e)=> {
@@ -26,13 +28,19 @@ class RegistrationForm extends React.Component {
         this.onSubmit(e);
         }}>
         <h2>OverwatchBuddy</h2>
-        <h3>Registration</h3>
-        <label htmlFor='regEmail'>Email</label>
-        <input type='text' name='regEmail'></input>
-        <label htmlFor='regUsername'>Username</label>
-        <input type='text' name='regUsername'></input> <br/>
-        <label htmlFor='regPassword'>Password</label>
-        <input type='password' name='regPassword'></input> <br/>
+        <label className='registration-header'>Registration</label>
+        <section className='email'>
+          <label htmlFor='regEmail' className='email-label'>Email</label>
+          <input type='text' name='regEmail' className='regEmail'></input>
+        </section>
+        <section className='username'>
+          <label htmlFor='regUsername' className='username-label'>Username</label>
+          <input type='text' name='regUsername' className='regUsername'></input>
+        </section>
+        <section className='password'>
+          <label htmlFor='regPassword' className='password-label'>Password</label>
+          <input type='password' name='regPassword' className='regPassword'></input>
+        </section>
         <button>Register</button> <br/>
         <Link to='/'><button>Back</button></Link>
         <Link to='/login'><button>Already registered?</button></Link>

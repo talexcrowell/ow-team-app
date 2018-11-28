@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {Redirect} from 'react-router-dom';
 import { login } from '../actions/authentication';
-import './login.css';
 
 class LoginForm extends React.Component {
   onSubmit(e) {
@@ -13,18 +13,31 @@ class LoginForm extends React.Component {
     return this.props.dispatch(login(user.username, user.password));
   }
   render(){
+    if(this.props.loggedIn){
+      return <Redirect to='/dashboard' />
+    }
     return (
       <form className='loginform'onSubmit={(e) => {
       e.preventDefault();
       this.onSubmit(e);}}>
-        <label>Username</label>
-        <input name='loginUsername'></input>
-        <label>Password</label>
-        <input name='loginPassword'></input>
+        <section className='login-username'>
+          <label htmlFor='loginUsername' className='loginUsername-label'>Username</label>
+          <input name='loginUsername' className='loginUsername-input'></input>
+        </section>
+        <section className='login-password'>
+          <label htmlFor='loginpassword' className='loginPassword-label'>Password</label>
+          <input name='loginPassword' className='loginPassword-input'></input>
+        </section>
         <button>Login</button>
       </form>
     )
   }
 }
 
-export default connect()(LoginForm);
+function mapStateToProps(state){
+  return{
+    loggedIn: state.auth.currentUser !== null
+  }
+}
+
+export default connect(mapStateToProps)(LoginForm);

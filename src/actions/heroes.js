@@ -10,7 +10,7 @@ export const fetchHeroesRequest = () => ({
 export const FETCH_HEROES_SUCCESS = 'FETCH_HEROES_SUCCESS';
 export const fetchHeroesSuccess = (heroes) => ({
   type: FETCH_HEROES_SUCCESS,
-  heroes
+  heroes,
 });
 
 export const FETCH_HEROES_ERROR = 'FETCH_HEROES_ERROR';

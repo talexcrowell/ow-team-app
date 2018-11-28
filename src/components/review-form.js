@@ -15,8 +15,12 @@ class ReviewForm extends React.Component {
   }
   
   render() {
-  const currentTeam = this.props.currentTeam.map((team, index) => (
-    <li key={index}>{team.heroName}</li>
+  const currentTeam = this.props.currentTeam.map((hero, index) => (
+    <li className='hero-review' key={index}>
+    <img className='hero-image-review' src={hero.image} alt={hero.heroName}></img>
+    <p className='hero-name-review'>{hero.heroName}</p>
+    <p className='hero-role-review'>{hero.role}</p>
+  </li>
   ));
 
   let dmg = <div>0</div>;
@@ -25,7 +29,6 @@ class ReviewForm extends React.Component {
       for(let i = 0; i < this.props.currentTeam.length; i++){
         dmgSum += this.props.currentTeam[i].damage;
       }
-      dmg = <div>{dmgSum}</div>;
     }
 
     let dps = <div>0</div>;
@@ -34,42 +37,58 @@ class ReviewForm extends React.Component {
       for(let i = 0; i < this.props.currentTeam.length; i++){
         dpsSum += this.props.currentTeam[i].dps;
       }
-      dps = <div>{dpsSum}</div>;
     }
 
-    let health = <div>0</div>;
     let healthSum = 0;
     if(this.props.currentTeam.length >0){
       for(let i = 0; i < this.props.currentTeam.length; i++){
         healthSum += this.props.currentTeam[i].health;
       }
-      health= <div>{healthSum}</div>;
     }
 
-    let hps = <div>0</div>;
     let hpsSum = 0;
     if(this.props.currentTeam.length >0){
       for(let i = 0; i < this.props.currentTeam.length; i++){
         hpsSum += this.props.currentTeam[i].hps;
-      }
-      hps = <div>{hpsSum}</div>;
+      }  
     }
+
+    const ultimates = this.props.currentTeam.map((hero, index) => (
+      <li key={index} className='review-ult'>{hero.ultimate.ultName}</li>
+    ));
   
   return(
-    <form className="current-build" onSubmit={(e)=> {
+    <form className="review-build" onSubmit={(e)=> {
       e.preventDefault();
       this.onSubmit(e);
     }}>
-      <label htmlFor="teamName">Build Name</label>
-      <input name= "teamName" placeholder='Team Name...'></input>
-      <ul>{currentTeam}</ul>
-      <ul>
-        <li>Damage:{dmg}</li>
-        <li>Damage Per Second:{dps}</li>
-        <li>Health:{health}</li>
-        <li>Healing Per Second:{hps}</li>
-        <li>Abilities:</li>
-      </ul>
+      <section className="review-build">
+        <label htmlFor="buildName" className="buildName-label">Name Your Build:</label>
+        <input name= "buildName" className="buildName" placeholder='ex. Dive Comp...'></input>
+        <section className='review-team-roster'>
+          <ul className='review-team'>{currentTeam}</ul>
+        </section> 
+        <section className='other-lists'>
+          <ul className='review-stats'>
+            <li className='review-stat'>Damage: {dmgSum} </li>
+            <li className='review-stat'>Damage Per Second: {dpsSum}</li>
+            <li className='review-stat'>Health: {healthSum}</li>
+            <li className='review-stat'>Healing Per Second: {hpsSum}</li>
+          </ul>
+          <section className='team-notes'>
+            <label htmlFor='user-notes' className='notes-label'>Notes</label>
+            <textarea name='user-notes' className='user-notes'></textarea>
+          </section>
+          <section className='review-abilities'>
+            <h4>Abilities</h4>
+            <ul className='review-abilities-list'><li className="review-ability">Gripping Hook</li><li className="review-ability">Gripping Hook</li><li className="review-ability">Gripping Hook</li><li className="review-ability">Gripping Hook</li><li className="review-ability">Gripping Hook</li><li className="review-ability">Gripping Hook</li><li className="review-ability">Gripping Hook</li><li className="review-ability">Gripping Hook</li><li className="review-ability">Gripping Hook</li><li className="review-ability">Gripping Hook</li><li className="review-ability">Gripping Hook</li><li className="review-ability">Gripping Hook</li><li className="review-ability">Gripping Hook</li><li className="review-ability">Gripping Hook</li><li className="review-ability">Gripping Hook</li><li className="review-ability">Gripping Hook</li><li className="review-ability">Gripping Hook</li><li className="review-ability">Gripping Hook</li><li className="review-ability">Gripping Hook</li></ul>
+          </section>
+          <section className='review-ultimates'>
+            <h4>Ultimates</h4>
+            <ul className='review-ult-list'>{ultimates}</ul>
+          </section>
+        </section> 
+      </section>
       <Link to='/build' ><button>Edit Build</button></Link>
       <button>Save Build</button>
     </form>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 import './App.css';
 import TeamBuild from './components/team-build';
@@ -16,13 +16,15 @@ class App extends Component {
     return (
       <Router>  
         <div className="App" >
+          <Switch>
             <Route exact path="/" component={LandingPage} />
             <Route exact path="/info" component ={InfoPage} />
             <Route exact path="/register" component ={RegistrationPage} />
             <Route exact path="/login" component={LoginPage} />
-            <Route path="/dashboard" component={Dashboard} />
-            <Route path="/build" component={TeamBuild} />
-            <Route exact path="/review" component={BuildReview}></Route>
+            <Route exact path="/dashboard" component={Dashboard} />
+            <Route exact path="/build" component={TeamBuild} />
+            <Route exact path="/review" component={BuildReview}/>
+          </Switch>
         </div>
       </Router>
       );
