@@ -56,18 +56,7 @@ export class TeamBuild extends React.Component {
     }
 
     
-  //   <div class="flip-card">
-  //   <div class="flip-card-inner">
-  //     <div class="flip-card-front">
-  //       <img src="img_avatar.png" alt="Avatar" style="width:300px;height:300px;"></img>
-  //     </div>
-  //     <div class="flip-card-back">
-  //       <h1>John Doe</h1> 
-  //       <p>Architect & Engineer</p> 
-  //       <p>We love that guy</p>
-  //     </div>
-  //   </div>
-  // </div>
+  
 
     const currentTeam = this.props.currentTeam.map((hero, index) => (
       <li className='hero-current' key={index}>
@@ -91,16 +80,35 @@ export class TeamBuild extends React.Component {
 
     const heroes = heroList.map((hero, index) => (
       <li className='hero' key={index}>
-        <img className='heroimage' src={hero.image} alt={hero.heroName}></img>
-        <p className='hero-name'>{hero.heroName}</p>
-        <p className='hero-role'>{hero.role}</p>
-        <button onClick={() => {
+        <div class="current-flip-card">
+          <div class="current-flip-card-inner">
+            <div class="current-flip-card-front">
+              <img className='heroimage' src={hero.image} alt={hero.heroName}></img>
+              <p className='hero-name'>{hero.heroName}</p>
+              <p className='hero-role'>{hero.role}</p>
+            </div>
+            <div class="current-flip-card-back">
+              <label className='current-flip-label'>Damage</label>
+              <p className='hero-role'>{hero.damage}</p>
+              <label className='current-flip-label'>DPS</label>
+              <p className='hero-role'>{hero.dps}</p>
+              <label className='current-flip-label'>Health</label>
+              <p className='hero-role'>{hero.health}</p>
+              <label className='current-flip-label'>HPS</label>
+              <p className='hero-role'>{hero.hps}</p>
+              <label className='current-flip-label'>Ultimate</label>
+              <p className='hero-role'>{hero.ultimate.ultName}</p>
+              <p className='hero-role'>{hero.ultimate.desc}</p>
+            </div>
+          </div>
+        </div>
+        <button className='add-hero' onClick={() => {
           this.props.dispatch(addHeroToUserTeam(this.props.heroes[index]));
           if(this.props.currentTeam.length < 6){
             this.props.dispatch(removeHeroFromRoster(this.props.heroes[index]));
           }
         }}>+</button>
-        </li>
+      </li>
     ));
     
 
