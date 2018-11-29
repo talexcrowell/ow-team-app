@@ -5,7 +5,9 @@ import {fetchHeroes, addHeroToRoster} from '../actions/heroes';
 import {fetchUserTeams, addHeroToUserTeam, removeHeroFromUserTeam, resetUserTeam} from '../actions/user';
 import {removeHeroFromRoster} from'../actions/heroes';
 import requiresLogin from '../requires-login';
+import BarUserTeams from './bar-user-teams';
 import './team-build.css'
+
 
 export class TeamBuild extends React.Component {
   componentDidMount() {
@@ -88,21 +90,6 @@ export class TeamBuild extends React.Component {
     ));
     
 
-    const teamImages = this.props.userTeams.reduce((images, team) => {
-      return [...team.team.map(hero => <li key={hero.heroName} className='bar-hero'>
-                                        <img src={hero.image} alt={hero.heroName} className='bar-hero-image'></img>
-                                      </li>)];
-    }, []);
-
-    const userTeams = this.props.userTeams.map((team, index) => (
-      <li key={index}>
-        <section className='bar-team'>
-          <label className='bar-team-name'>{team.name}</label>
-          <ul className='bar-team-roster'>{teamImages}</ul>
-        </section>
-      </li>
-    ));
-
     const ultimates = this.props.currentTeam.map((hero, index) => (
       <li key={index}>{hero.ultimate.ultName}</li>
     ));
@@ -121,11 +108,7 @@ export class TeamBuild extends React.Component {
     
     return(
       <div className="team-build">
-        <section className="userteams-build">
-          <Link to='/dashboard'><button>Dashboard</button></Link>
-          <label className='your-build'>Your Builds</label>
-          <ul>{userTeams}</ul>
-        </section>
+        <BarUserTeams />
         <section className="hero-roster">
           <h3 className='roster-label'>Hero Roster</h3>
           <ul>{heroes}</ul>
