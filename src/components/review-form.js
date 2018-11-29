@@ -15,12 +15,29 @@ class ReviewForm extends React.Component {
   }
   
   render() {
+
   const currentTeam = this.props.currentTeam.map((hero, index) => (
     <li className='hero-review' key={index}>
-    <img className='hero-image-review' src={hero.image} alt={hero.heroName}></img>
-    <p className='hero-name-review'>{hero.heroName}</p>
-    <p className='hero-role-review'>{hero.role}</p>
-  </li>
+      <div class="review-flip-card">
+        <div class="review-flip-card-inner">
+          <div class="review-flip-card-front">
+            <img className='hero-image-review' src={hero.image} alt={hero.heroName}></img>
+            <p className='hero-name-review'>{hero.heroName}</p>
+            <p className='hero-role-review'>{hero.role}</p>
+          </div>
+          <div class="review-flip-card-back">
+            <label className='review-flip-label'>Damage</label>
+            <p className='hero-role-review'>{hero.damage}</p>
+            <label className='review-flip-label'>DPS</label>
+            <p className='hero-role-review'>{hero.dps}</p>
+            <label className='review-flip-label'>Health</label>
+            <p className='hero-role-review'>{hero.health}</p>
+            <label className='review-flip-label'>HPS</label>
+            <p className='hero-role-review'>{hero.hps}</p>
+          </div>
+        </div>
+      </div>
+    </li>
   ));
 
     let dmgSum = 0;
@@ -61,7 +78,7 @@ class ReviewForm extends React.Component {
     
     let saveError;
     if(this.props.error) {
-      saveError = <div>{this.props.error.message}</div>;
+      saveError = <div className='save-error'>Please enter a build name!</div>;
     }
 
   
