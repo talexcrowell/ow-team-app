@@ -1,4 +1,4 @@
-import {FETCH_USER_TEAMS_REQUEST, FETCH_USER_TEAMS_SUCCESS, FETCH_USER_TEAMS_ERROR, ADD_HERO_TO_USER_TEAM, RESET_USER_TEAM, VIEW_USER_TEAM, REMOVE_HERO_FROM_USER_TEAM, SAVE_USER_TEAM_ERROR, SAVE_USER_TEAM_SUCCESS} from '../actions/user';
+import {FETCH_USER_TEAMS_REQUEST, FETCH_USER_TEAMS_SUCCESS, FETCH_USER_TEAMS_ERROR, ADD_HERO_TO_USER_TEAM, RESET_USER_TEAM, VIEW_USER_TEAM, REMOVE_HERO_FROM_USER_TEAM, SAVE_USER_TEAM_ERROR, SAVE_USER_TEAM_SUCCESS, REGISTER_USER_ERROR} from '../actions/user';
 
 
 const initialState = {
@@ -65,6 +65,12 @@ export default function userReducer(state=initialState, action){
     }
   }
   else if(action.type === SAVE_USER_TEAM_ERROR){
+    return{
+      ...state,
+      error: action.error
+    }
+  }
+  else if(action.type === REGISTER_USER_ERROR){
     return{
       ...state,
       error: action.error

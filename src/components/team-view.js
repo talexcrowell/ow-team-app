@@ -1,6 +1,5 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Redirect} from 'react-router-dom';
 import requiresLogin from '../requires-login';
 import ViewForm from './view-form';
 import BarUserTeams from './bar-user-teams';

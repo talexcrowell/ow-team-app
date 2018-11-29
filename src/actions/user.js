@@ -53,6 +53,12 @@ export const saveUserTeamError = error => ({
   error
 })
 
+export const REGISTER_USER_ERROR = 'REGISTER_USER_ERROR';
+export const registerUserError = error => ({
+  type:REGISTER_USER_ERROR,
+  error
+});
+
 
 // Async
 export const fetchUserTeams = () => {
@@ -135,8 +141,6 @@ export const registerUser = user => {
       return res.json();
     })
     .then(()=> dispatch(login(user.username, user.password)))
-    .catch(err => {
-      console.log(err)
-    });
+    .catch(err => dispatch(registerUserError(err)));
   };
 };

@@ -12,19 +12,28 @@
 
 .hero-roster{
   display: inline-block;
+  padding: 10px;
   width: 798px;
   background-color: white;
   border: 1px gainsboro solid;
 }
 
-.hero-roster, .roster-label{
+.roster-label{
+  display: inline-block;
+  width: 798px;
+  margin:0;
   text-align:center;
+  background-color: gainsboro;
+  border: 1px gainsboro solid;
+  font-style: italic;
 }
 
 .hero {
-  background-color: white;
-  width: 130px;
-  height: 360px;
+  background-color: gainsboro;
+  border: 1px white solid;
+  width: 140px;
+  height: 300px;
+  margin: 7.5px;
   border-radius: 6px;
   padding: 7px;
   float: left;
@@ -32,9 +41,16 @@
 
 .hero-name, .hero-role{
   margin-top:2.5px;
-  width: 120px;
+  width: 125px;
   margin-bottom:2.5px;
   font-size: 12px;
+  border-radius: 6px;
+}
+
+.hero-name{
+  font-size: 16px;
+  font-weight: bold;
+  font-style: italic;
 }
 
 .heroimage {
@@ -48,12 +64,13 @@
 
 .current-build {
   display: inline-block;
-  background-color: white;
+  background-color: gainsboro;
   width: 800px;
   margin-left: 160px;
   text-align: center;
   bottom:0px;
   border: 1px gainsboro solid;
+  border-radius: 4px;
 }
 
 .current-team-roster{
@@ -62,8 +79,13 @@
   height: 250px;
   margin-left: 0;
   border: 1px gainsboro solid;
-  padding: 10px;
+  padding: 5px;
   float:left;
+}
+
+.current-team{
+  height: 240px;
+  margin: 0px;
 }
 
 .current-label{
@@ -75,19 +97,38 @@
 }
 
 .hero-current{
-  background-color: white;
+  background-color: gainsboro;
+  border: 1px white solid;
   border-radius: 6px;
   padding: 2.5px;
+  margin: 1.5px;
   font-size: 14px;
-  width: 80px;
+  width: 85px;
+  height: 230px;
   float: left;
 }
 
-.hero-current, .hero-image-current{
-  width: 80px;
+.hero-image-current{
+  width: 70px;
   height: auto;
 }
 
+.hero-name-current{
+  margin:0;
+  width: 75px;
+  height: 32px;
+  border-radius: 6px;
+}
+
+.hero-role-current{
+  font-size: 12px;
+  width: 75px;
+  height: 28px;
+  margin:2.5px;
+  margin-left: 0px;
+  border-radius: 6px;
+  text-align: center;
+}
 .stats{
   text-align: left;
   float: left;
@@ -117,6 +158,7 @@
   margin-top: 0px;
   padding-bottom: 15px;
   border: 1px gainsboro solid;
+  border-radius: 4px;
 }
 
 .abilities-list{
@@ -135,12 +177,18 @@
   margin-bottom: 0px;
   height: 160px;
   border: 1px gainsboro solid;
+  border-radius: 4px;
 }
 
 .ultimates, h4{
   margin-top: 0px;
   margin-bottom: 5px;
   background-color: white;
+}
+
+.build-buttons{
+  background-color: white;
+  border-radius: 4px;
 }
 
 /* User-Teams Template */

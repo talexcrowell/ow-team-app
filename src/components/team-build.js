@@ -58,8 +58,8 @@ export class TeamBuild extends React.Component {
     const currentTeam = this.props.currentTeam.map((hero, index) => (
       <li className='hero-current' key={index}>
         <img className='hero-image-current' src={hero.image} alt={hero.heroName}></img>
-        <p className='hero-name'>{hero.heroName}</p>
-        <p className='hero-role'>{hero.role}</p>
+        <p className='hero-name-current'>{hero.heroName}</p>
+        <p className='hero-role-current'>{hero.role}</p>
         <button onClick={() => {
           this.props.dispatch(removeHeroFromUserTeam(hero));
           this.props.dispatch(addHeroToRoster(hero));
@@ -102,8 +102,8 @@ export class TeamBuild extends React.Component {
     return(
       <main role='main' className="team-build">
         <BarUserTeams />
+        <h3 aria-level='1' className='roster-label'>Hero Roster</h3>
         <section className="hero-roster">
-          <h3 aria-level='1' className='roster-label'>Hero Roster</h3>
           <ul>{heroes}</ul>
         </section>
         <section className="current-build">
@@ -121,9 +121,9 @@ export class TeamBuild extends React.Component {
               <h4 aria-level='3' >Abilities</h4>
               <ul className='abilities-list'>{abilities}</ul>
             </section>
-            <section>
+            <section className='build-buttons'>
+              <Link to='/review' ><button className='review-build-button'>Review</button></Link>
               <button onClick={() => this.fullReset()}>Reset</button>
-              <Link to='/review' ><button>Review Build</button></Link>
             </section>
           </section>  
           <ul className='stats'>

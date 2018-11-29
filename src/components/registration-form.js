@@ -21,6 +21,12 @@ class RegistrationForm extends React.Component {
       return <Redirect to='/dashboard' />
     }
 
+    let registrationError;
+    if(this.props.error){
+      console.log(this.props.error);
+      registrationError = <div className='registration-error' aria-live='polite'>Please fill all fields</div>
+    }
+
     return (
       <form className='regForm' onSubmit={(e)=> {
         e.preventDefault();
@@ -28,6 +34,7 @@ class RegistrationForm extends React.Component {
         }}>
         <h2 aria-level='1'>Overwatch Buddy</h2>
         <label className='registration-header'>Registration</label>
+        {registrationError}
         <section className='email'>
           <label htmlFor='regEmail' className='email-label'>Email</label>
           <input type='text' aria-label='regEmail' name='regEmail' className='regEmail'></input>
@@ -49,7 +56,8 @@ class RegistrationForm extends React.Component {
 }
 
 const mapPropsToState = state => ({
-  loggedIn: state.auth.currentUser !== null
+  loggedIn: state.auth.currentUser !== null,
+  error: state.user.error
 });
 
 export default connect(mapPropsToState)(RegistrationForm);

@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Link, Redirect} from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
 import RegistrationForm from './registration-form';
 import './registration.css';
 
@@ -9,7 +9,7 @@ function RegistrationPage (props){
   if(props.loggedIn){
     return <Redirect to='/dashboard' />
   }
-  
+
   return (
     <div role='main' className='registration'>
       <RegistrationForm />
@@ -19,7 +19,8 @@ function RegistrationPage (props){
 
 function mapStateToProps(state){
   return{
-    loggedIn: state.auth.currentUser !== null
+    loggedIn: state.auth.currentUser !== null,
+    error: state.auth.error
   }
 };
 export default connect(mapStateToProps)(RegistrationPage);

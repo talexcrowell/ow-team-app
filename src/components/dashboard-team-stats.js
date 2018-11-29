@@ -44,7 +44,12 @@ class DashboardTeamStats extends React.Component {
     return (
       <li key={hero.heroName} className='dash-hero'>
         <img src={hero.image} alt={hero.heroName+this.props.teamIndex.name} className='dash-hero-image'></img>
+        <label htmlFor='dash-hero-name' className='dash-hero-name-label'>Name</label>
         <p className='dash-hero-name'>{hero.heroName}</p>
+        <label htmlFor='dash-hero-role' className='dash-hero-role-label'>Role</label>
+        <p className='dash-hero-role'>{hero.role}</p>
+        <label htmlFor='dash-hero-ult' className='dash-hero-ult-label'>Ultimate</label>
+        <p className='dash-hero-ult'>{hero.ultimate.ultName}</p>
       </li>);
   });
 

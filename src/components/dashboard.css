@@ -51,8 +51,8 @@ h3{
 }
 
 .dash-hero{
-  background-color: white;
-  border: 1px gainsboro solid;
+  background-color: gainsboro;
+  border: 1px white solid;
   width: 120px;
   height: 350px;
   border-radius: 6px;
@@ -67,8 +67,38 @@ h3{
 }
 
 .dash-hero-name{
-  width: 110px;
+  width: 115px;
+  font-style: italic;
+  font-weight: bold;
   text-align: center;
+  border-radius: 6px;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.dash-hero-role{
+  width: 115px;
+  font-size: 14px;
+  text-align: center;
+  border-radius: 6px;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.dash-hero-ult{
+  width: 115px;
+  font-size: 14px;
+  text-align: center;
+  border-radius: 6px;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.dash-hero-role-label, .dash-hero-name-label, .dash-hero-ult-label {
+  text-align: left;
+  display: block;
+  width: 115px;
+  font-weight: bold;
 }
 
 .dash-stats-label{
