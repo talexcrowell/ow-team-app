@@ -53,16 +53,6 @@ export class TeamBuild extends React.Component {
       }
     }
 
-    // if(this.props.currentTeam.length >= 1){
-    //   for(let i=0; i < this.props.currentTeam.length; i++){
-    //     for(let j=1; j < this.props.currentTeam.length; j++){
-    //       if(this.props.currentTeam[i].heroName === this.props.currentTeam[j].heroName){
-    //         buildError = <div>You have a duplicate hero in your build!</div>
-    //       }
-    //     }
-    //   }
-    // }
-
     const currentTeam = this.props.currentTeam.map((hero, index) => (
       <li className='hero-current' key={index}>
         <img className='hero-image-current' src={hero.image} alt={hero.heroName}></img>
@@ -75,8 +65,15 @@ export class TeamBuild extends React.Component {
         }>-</button>
       </li>
     ));
+
+    let double = [];
+    for(let i=0; i < this.props.currentTeam.length; i++){
+      double.push(this.props.currentTeam[i].id);
+    }
     
-    const heroes = this.props.heroes.map((hero, index) => (
+    const heroList = this.props.heroes.filter(hero => !double.includes(hero.id));
+
+    const heroes = heroList.map((hero, index) => (
       <li className='hero' key={index}>
         <img className='heroimage' src={hero.image} alt={hero.heroName}></img>
         <p className='hero-name'>{hero.heroName}</p>
@@ -89,6 +86,7 @@ export class TeamBuild extends React.Component {
         }}>+</button>
         </li>
     ));
+    
 
     const teamImages = this.props.userTeams.reduce((images, team) => {
       return [...team.team.map(hero => <li key={hero.heroName} className='bar-hero'>

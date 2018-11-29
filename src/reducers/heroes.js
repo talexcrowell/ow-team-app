@@ -13,6 +13,7 @@ export default function heroesReducer(state=initialState, action){
       loading: true
     }
   }
+
   else if(action.type === FETCH_HEROES_SUCCESS){
     return{
       ...state,
@@ -21,6 +22,7 @@ export default function heroesReducer(state=initialState, action){
       heroes: [...action.heroes],
     }
   }
+
   else if(action.type === FETCH_HEROES_ERROR){
     return{
       ...state,
@@ -28,12 +30,14 @@ export default function heroesReducer(state=initialState, action){
       error: action.error
     }
   }
+
   else if(action.type === ADD_HERO_TO_ROSTER){
     return{
       ...state,
       heroes: [...state.heroes, action.hero]
     }
   }
+
   else if(action.type === REMOVE_HERO_FROM_ROSTER){
     return{
       ...state,
