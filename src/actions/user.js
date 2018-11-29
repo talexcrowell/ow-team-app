@@ -25,6 +25,12 @@ export const addHeroToUserTeam = (hero) => ({
   hero
 })
 
+export const REMOVE_HERO_FROM_USER_TEAM = 'REMOVE_HERO_FROM_USER_TEAM';
+export const removeHeroFromUserTeam = (hero) => ({
+  type: REMOVE_HERO_FROM_USER_TEAM,
+  hero
+})
+
 export const RESET_USER_TEAM = 'RESET_USER_TEAM';
 export const resetUserTeam = (hero) => ({
   type: RESET_USER_TEAM
@@ -69,6 +75,42 @@ export const saveUserCurrentTeam = (currentTeam) => {
     .then(() => dispatch(fetchUserTeams()))
     .catch(err => dispatch(fetchUserTeams(err)))
   }
+}
+
+export const editUserSavedTeam = (team) => {
+  return(dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    fetch(`${API_BASE_URL}/api/teams/${team.id}`, {
+      method: 'PUT',
+      headers:{
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${authToken}`
+      },
+      body: JSON.stringify({team})
+    })
+    .then(res => res.json())
+    .then(() => dispatch(fetchUserTeams()))
+    .catch(err => dispatch(fetchUserTeams(err)))
+  } 
+}
+
+export const deleteUserSavedTeam= (teamId) =>{
+  return(dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    fetch(`${API_BASE_URL}/api/teams/${teamId}`, {
+      method: 'DELETE',
+      headers:{
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${authToken}`
+      }, 
+    })
+    .then(res => res.json())
+    .then(() => dispatch(fetchUserTeams()))
+    .catch(err => dispatch(fetchUserTeams(err)))
+  } 
+
 }
 
 export const registerUser = user => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Link, Redirect} from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
 import requiresLogin from '../requires-login';
 import {fetchUserTeams} from  '../actions/user';
 import { clearAuthToken } from '../local-storage';

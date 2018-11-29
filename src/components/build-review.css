@@ -130,7 +130,7 @@
 
 .team-notes {
   text-align: left;
-  height: auto;
+  height: 125px;
   float: left;
   clear:left;
   display: inline-block;
@@ -138,12 +138,12 @@
   width: 270px;
   margin-top:0px;
   margin-bottom: 0px;
-  margin-left: 5px;
+  margin-left: 0px;
+  padding-left: 5px;
 }
 
-.user-notes {
+textarea, .user-notes {
   resize: none;
-  float: left;
   width: 265px;
   min-height: 85px;
 }
@@ -156,6 +156,11 @@
 .team-notes, .notes-label{
   margin-top:0px;
   background-color: white;
+  width:270px;
+  display: block;
+  vertical-align: top;
+  font-style: italic;
+  font-weight: bold;
 }
 
 /* User-Teams Template */

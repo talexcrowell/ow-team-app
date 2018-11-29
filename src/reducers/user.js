@@ -1,10 +1,10 @@
-import {FETCH_USER_TEAMS_REQUEST, FETCH_USER_TEAMS_SUCCESS, FETCH_USER_TEAMS_ERROR, ADD_HERO_TO_USER_TEAM, RESET_USER_TEAM, VIEW_USER_TEAM} from '../actions/user';
+import {FETCH_USER_TEAMS_REQUEST, FETCH_USER_TEAMS_SUCCESS, FETCH_USER_TEAMS_ERROR, ADD_HERO_TO_USER_TEAM, RESET_USER_TEAM, VIEW_USER_TEAM, REMOVE_HERO_FROM_USER_TEAM} from '../actions/user';
 
 
 const initialState = {
   teams:[],
   currentTeam:[],
-  teamName: null,
+  teamId: null,
   loading: false,
   error: null
 };
@@ -37,18 +37,24 @@ export default function userReducer(state=initialState, action){
       currentTeam: [...state.currentTeam, action.hero]
     }
   }
+  else if(action.type === REMOVE_HERO_FROM_USER_TEAM){
+    return{
+      ...state,
+      currentTeam: state.currentTeam.filter(hero => hero.id !== action.hero.id)
+    }
+  }
   else if(action.type === VIEW_USER_TEAM){
     return{
       ...state,
-      currentTeam:[...action.team],
-      teamName: action.team.name
+      currentTeam:[...action.team.team],
+      teamId: action.team.id
     }
   }
   else if(action.type === RESET_USER_TEAM){
     return{
       ...state,
       currentTeam:[],
-      teamName: null
+      teamId:null
     }
   }
   return state;

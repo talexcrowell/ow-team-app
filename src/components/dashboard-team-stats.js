@@ -9,7 +9,11 @@ class DashboardTeamStats extends React.Component {
     return collective.team;
   });
 
-  console.log(teamSelector);
+  const teamName = this.props.teams.map(collective => {
+    return collective;
+  })
+
+  console.log(teamName);
   let dmgStats=0;
   for(let i=0; i < teamSelector[this.props.teamIndex].length; i++){
     dmgStats += teamSelector[this.props.teamIndex][i].dps; 
@@ -37,13 +41,25 @@ class DashboardTeamStats extends React.Component {
     
   }
 
+  const images = teamSelector[this.props.teamIndex].map((hero)=>{
+    return (<li key={hero.heroName} className='dash-hero'>
+    <img src={hero.image} alt={hero.heroName} className='dash-hero-image'></img>
+    <p className='dash-hero-name'>{hero.heroName}</p>
+  </li>);
+  });
+
   return(
+    <section>
+    <label className='dash-team-name'>{teamName[this.props.teamIndex].name}</label>
+      <ul className='dash-team-roster'>{images}</ul>
+    <label htmlFor='dash-stats' className='dash-stats-label'>Stats</label>
     <ul className='dash-stats'>
       <li className='dash-stat'>Damage: {dmgStats} </li>
       <li className='dash-stat'>Damage Per Second: {dpsStats}</li>
       <li className='dash-stat'>Health: {healthStats} </li>
       <li className='dash-stat'>Healing Per Second: {hpsStats}</li>
-    </ul>)
+    </ul>
+    </section>)
   
   }
 }

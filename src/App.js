@@ -8,6 +8,7 @@ import LoginPage from './components/login-page';
 import Dashboard from './components/dashboard';
 import RegistrationPage from './components/registration-form';
 import BuildReview from './components/build-review';
+import BuildEdit from './components/team-edit';
 
 class App extends Component {
  
@@ -22,6 +23,7 @@ class App extends Component {
             <Route exact path="/dashboard" component={Dashboard} />
             <Route exact path="/build" component={TeamBuild} />
             <Route exact path="/review" component={BuildReview}/>
+            <Route exact path="/edit" component={BuildEdit} />
           </Switch>
         </div>
       </Router>

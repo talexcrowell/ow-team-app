@@ -1,8 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
-import {fetchHeroes} from '../actions/heroes';
-import {fetchUserTeams, addHeroToUserTeam, resetUserTeam} from '../actions/user';
+import {fetchHeroes, addHeroToRoster} from '../actions/heroes';
+import {fetchUserTeams, addHeroToUserTeam, removeHeroFromUserTeam, resetUserTeam} from '../actions/user';
+import {removeHeroFromRoster} from'../actions/heroes';
 import requiresLogin from '../requires-login';
 import './team-build.css'
 
@@ -10,6 +11,11 @@ export class TeamBuild extends React.Component {
   componentDidMount() {
     this.props.dispatch(fetchHeroes());
     this.props.dispatch(fetchUserTeams());
+  }
+
+  fullReset(){
+    this.props.dispatch(fetchHeroes());
+    this.props.dispatch(resetUserTeam());
   }
 
   render() {
@@ -62,6 +68,11 @@ export class TeamBuild extends React.Component {
         <img className='hero-image-current' src={hero.image} alt={hero.heroName}></img>
         <p className='hero-name'>{hero.heroName}</p>
         <p className='hero-role'>{hero.role}</p>
+        <button onClick={() => {
+          this.props.dispatch(removeHeroFromUserTeam(hero));
+          this.props.dispatch(addHeroToRoster(hero));
+          } 
+        }>-</button>
       </li>
     ));
     
@@ -70,7 +81,12 @@ export class TeamBuild extends React.Component {
         <img className='heroimage' src={hero.image} alt={hero.heroName}></img>
         <p className='hero-name'>{hero.heroName}</p>
         <p className='hero-role'>{hero.role}</p>
-        <button onClick={() => this.props.dispatch(addHeroToUserTeam(this.props.heroes[index]))}>+</button>
+        <button onClick={() => {
+          this.props.dispatch(addHeroToUserTeam(this.props.heroes[index]));
+          if(this.props.currentTeam.length < 6){
+            this.props.dispatch(removeHeroFromRoster(this.props.heroes[index]));
+          }
+        }}>+</button>
         </li>
     ));
 
@@ -96,6 +112,13 @@ export class TeamBuild extends React.Component {
     const abilities = this.props.currentTeam.reduce((abilities, hero) => {
       return [...abilities, ...hero.abilities.map((ability, index) => <li key={hero.heroName + index} className='ability'>{ability}</li>)];
     }, []);
+
+    let reviewButton;
+    if(this.props.teamId){
+      reviewButton = <Link to='/edit' ><button>Review Build</button></Link>;
+    } else {
+      reviewButton = <Link to='/review' ><button>Review Build</button></Link>;
+    }
 
     
     return(
@@ -125,8 +148,8 @@ export class TeamBuild extends React.Component {
               <ul className='abilities-list'>{abilities}</ul>
             </section>
             <section>
-              <button onClick={() => this.props.dispatch(resetUserTeam())}>Reset</button>
-              <Link to='/review' ><button>Review Build</button></Link>
+              <button onClick={() => this.fullReset()}>Reset</button>
+              {reviewButton}
             </section>
           </section>  
           <ul className='stats'>
@@ -146,7 +169,8 @@ function mapStateToProps(state){
   return{
     heroes: state.heroes.heroes,
     currentTeam: state.user.currentTeam,
-    userTeams: state.user.teams
+    userTeams: state.user.teams,
+    teamId: state.user.teamId !== null
   }
 }
 

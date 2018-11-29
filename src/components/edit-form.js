@@ -1,18 +1,19 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
-import { saveUserCurrentTeam } from '../actions/user';
+import { editUserSavedTeam, deleteUserSavedTeam } from '../actions/user';
 import requiresLogin from '../requires-login';
 
-class ReviewForm extends React.Component {
+class EditForm extends React.Component {
   onSubmit(e) {
-    const newTeam ={
+    const editTeam ={
       name: e.target.buildName.value,
       team: this.props.currentTeam,
-      notes: e.target.userNotes.value
+      notes: e.target.userNotes.value,
+      id: this.props.teamId
     };
-    console.log(newTeam);
-    return this.props.dispatch(saveUserCurrentTeam(newTeam));
+    console.log(editTeam);
+    return this.props.dispatch(editUserSavedTeam(editTeam));
   }
   
   render() {
@@ -60,6 +61,7 @@ class ReviewForm extends React.Component {
       <li key={index} className='review-ult'>{hero.ultimate.ultName}</li>
     ));    
     
+
   
   return(
     <form className="review-build" onSubmit={(e)=> {
@@ -68,8 +70,7 @@ class ReviewForm extends React.Component {
     }}>
       <section className="review-build">
         <section className='add-name'>
-          <label htmlFor="buildName" className="buildName-label">Name Your Build:</label>
-          <input name= "buildName" className="buildName" placeholder='ex. Dive Comp...'></input>
+          <label htmlFor="buildName" className="buildName-label">Edit Your Build: {this.props.teamName}</label>
         </section>
         <section className='review-team-roster'>
           <ul className='review-team'>{currentTeam}</ul>
@@ -97,6 +98,7 @@ class ReviewForm extends React.Component {
       </section>
       <Link to='/build' ><button>Edit Build</button></Link>
       <button>Save Build</button>
+      <Link to='/dashboard'><button onClick={()=> this.props.dispatch(deleteUserSavedTeam(this.props.teamId))}>Delete Build</button></Link>
     </form>
   )
   }
@@ -109,4 +111,4 @@ function mapStateToProps(state){
   }
 }
 
-export default requiresLogin()(connect(mapStateToProps)(ReviewForm));
+export default requiresLogin()(connect(mapStateToProps)(EditForm));

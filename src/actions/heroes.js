@@ -1,4 +1,5 @@
 import { API_BASE_URL } from '../config';
+import { RESET_USER_TEAM } from './user';
 
 
 //Sync functions
@@ -19,6 +20,17 @@ export const fetchHeroesError = (error) => ({
   error
 });
 
+export const ADD_HERO_TO_ROSTER = 'ADD_HERO_TO_ROSTER';
+export const addHeroToRoster = (hero) => ({
+  type:ADD_HERO_TO_ROSTER,
+  hero
+});
+
+export const REMOVE_HERO_FROM_ROSTER = 'REMOVE_HERO_FROM_ROSTER';
+export const removeHeroFromRoster = (hero) => ({
+  type: REMOVE_HERO_FROM_ROSTER,
+  hero
+});
 
 //Async functions
 export const fetchHeroes = () => {
