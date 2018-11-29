@@ -42,6 +42,18 @@ export const viewUserTeam = (team) => ({
   team
 })
 
+export const SAVE_USER_TEAM_SUCCESS = 'SAVE_USER_TEAM_SUCCESS';
+export const saveUserTeamSuccess = () => ({
+  type: SAVE_USER_TEAM_SUCCESS,
+})
+
+export const SAVE_USER_TEAM_ERROR = 'SAVE_USER_TEAM_ERROR';
+export const saveUserTeamError = error => ({
+  type: SAVE_USER_TEAM_ERROR,
+  error
+})
+
+
 // Async
 export const fetchUserTeams = () => {
   return (dispatch, getState) => {
@@ -53,7 +65,12 @@ export const fetchUserTeams = () => {
         Authorization: `Bearer ${authToken}`
       }
     })
-    .then(res => res.json())
+    .then(res => {
+      if(!res.ok){
+        return res.json().then(err => Promise.reject(err));
+      }
+      return res.json();
+    })
     .then(data => dispatch(fetchUserTeamsSuccess(data)))
     .catch(err => dispatch(fetchUserTeamsError(err)))
   }
@@ -71,34 +88,22 @@ export const saveUserCurrentTeam = (currentTeam) => {
       },
       body: JSON.stringify({currentTeam})
     })
-    .then(res => res.json())
+    .then(res => {
+      if(!res.ok){
+        return res.json().then(err => Promise.reject(err));
+      }
+      return res.json();
+    })
     .then(() => dispatch(fetchUserTeams()))
-    .catch(err => dispatch(fetchUserTeams(err)))
+    .catch(err => dispatch(saveUserTeamError(err)))
   }
 }
 
-export const editUserSavedTeam = (team) => {
+
+export const deleteUserSavedTeam= (team) =>{
   return(dispatch, getState) => {
     const authToken = getState().auth.authToken;
     fetch(`${API_BASE_URL}/api/teams/${team.id}`, {
-      method: 'PUT',
-      headers:{
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${authToken}`
-      },
-      body: JSON.stringify({team})
-    })
-    .then(res => res.json())
-    .then(() => dispatch(fetchUserTeams()))
-    .catch(err => dispatch(fetchUserTeams(err)))
-  } 
-}
-
-export const deleteUserSavedTeam= (teamId) =>{
-  return(dispatch, getState) => {
-    const authToken = getState().auth.authToken;
-    fetch(`${API_BASE_URL}/api/teams/${teamId}`, {
       method: 'DELETE',
       headers:{
         Accept: 'application/json',
@@ -123,10 +128,15 @@ export const registerUser = user => {
       },
       body: JSON.stringify(user)
     })
-      .then(res => res.json())
-      .then(()=> dispatch(login(user.username, user.password)))
-      .catch(err => {
-        console.log(err)
-      });
+    .then(res => {
+      if(!res.ok){
+        return res.json().then(err => Promise.reject(err));
+      }
+      return res.json();
+    })
+    .then(()=> dispatch(login(user.username, user.password)))
+    .catch(err => {
+      console.log(err)
+    });
   };
 };

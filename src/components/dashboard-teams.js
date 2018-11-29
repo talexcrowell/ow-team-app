@@ -13,7 +13,7 @@ class DashboardTeams extends React.Component {
         <section className='dash-team'>
           <DashboardTeamStats teamIndex={index} />
           <p className='dash-team-notes'>{team.notes || 'No notes for this build'}</p>
-          <Link to='/edit'><button onClick={() => this.props.dispatch(viewUserTeam(team))}>View Build</button></Link> 
+          <Link to='/view'><button onClick={() => this.props.dispatch(viewUserTeam(team))}>View Build</button></Link> 
         </section>
       </li>
     ));

@@ -7,18 +7,17 @@ import BarUserTeams from './bar-user-teams';
 import './build-review.css';
 
 class BuildReview extends React.Component{
- render() {
-    if(this.props.savingTeam){
-      return (
+ render() { 
+    if (this.props.savingTeam){
+      return(
         <Redirect to='/dashboard' />
-      )
+      );
     }
-
     return(
-      <div className='team-review'>
+      <main role='main' className='team-review'>
         <BarUserTeams />
         <ReviewForm />
-      </div>
+      </main>
     )
   }
 }
@@ -26,7 +25,6 @@ class BuildReview extends React.Component{
 function mapStateToProps(state){
   return{
     userTeams: state.user.teams,
-    currentTeam: state.user.currentTeam,
     savingTeam: state.user.loading !== false
   }
 }

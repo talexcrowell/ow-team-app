@@ -43,7 +43,7 @@ class DashboardTeamStats extends React.Component {
   const images = teamSelector[this.props.teamIndex].map((hero)=>{
     return (
       <li key={hero.heroName} className='dash-hero'>
-        <img src={hero.image} alt={hero.heroName} className='dash-hero-image'></img>
+        <img src={hero.image} alt={hero.heroName+this.props.teamIndex.name} className='dash-hero-image'></img>
         <p className='dash-hero-name'>{hero.heroName}</p>
       </li>);
   });

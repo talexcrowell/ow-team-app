@@ -1,0 +1,118 @@
+ .delete-button{
+  background-color: red;
+  color: white;
+}
+
+/* Component Template */
+
+.team-review{
+  background-color: white;
+  border: 1px white solid;
+  border-radius: 4px;
+  display: inline-block;
+  width:960px;
+}
+/* Review Team Template */
+
+.view-buildName-label{
+  background-color: gainsboro;
+  border: 1px white solid;
+  padding: 5px;
+  font-size: 30px;
+  font-style: italic;
+  margin: 0;
+  border-radius: 4px;
+}
+
+
+.review-ultimates{
+  display: inline-block;
+  margin: 0px;
+  width: 250px;
+  vertical-align: top;
+  border: 1px gainsboro solid;
+}
+
+.review-ult-list{
+  height: auto;
+  width: 248px;
+  margin-top: 0px;
+}
+
+.review-ult{
+  display: inline-block;
+  width: 248px;
+  margin: 0;
+  padding-top:5px;
+  padding-bottom: 5px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.review-ultimates, h4{
+  margin-top: 0px;
+  margin-bottom: 5px;
+  background-color: white;
+}
+
+.review-team-notes {
+  text-align: left;
+  height: 100px;
+  float: left;
+  clear:left;
+  display: inline-block;
+  font-size: 18px;
+  width: 270px;
+  margin-top:0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-left: 5px;
+}
+
+.review-userNotes {
+  resize: none;
+  width: 265px;
+  min-height: 80px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
+  margin-top: 2.5px;
+  margin-bottom: 0px;
+}
+
+.review-notes-label{
+  width:270px;
+  font-size: 16px;
+  display: inline;
+}
+
+.review-team-notes, .review-notes-label{
+  margin-top:0px;
+  background-color: white;
+  width:270px;
+  display: block;
+  vertical-align: top;
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* User-Teams Template */
+.userteams-build {
+  background-color: white;
+  display: inline-block;
+  width: 160px;
+  height: 100%;
+  float: left;
+}
+
+.userteams, .your-build {
+  text-align: center;
+  width: 160px;
+}
+
+/* Error */
+.build-error{
+  background-color:red;
+  margin-bottom: 5px;
+  font-weight: bold;
+}

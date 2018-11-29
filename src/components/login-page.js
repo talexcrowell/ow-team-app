@@ -10,8 +10,8 @@ function LoginPage (props) {
   }
 
   return (
-    <section className='login'>
-      <h2>Overwatch Buddy</h2>
+    <section role='main' className='login'>
+      <h2 aria-level='1'>Overwatch Buddy</h2>
       <LoginForm />
       <Link to='/'><button>Back</button></Link>
     </section>

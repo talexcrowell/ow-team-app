@@ -2,6 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import BarTeam from './bar-team';
+import {resetUserTeam} from '../actions/user';
+
 
 class BarUserTeams extends React.Component {
   render(){
@@ -14,7 +16,7 @@ class BarUserTeams extends React.Component {
 
     return(
       <section className="userteams-build">
-        <Link to='/dashboard'><button>Dashboard</button></Link>
+        <Link to='/dashboard'><button onClick={() => this.props.dispatch(resetUserTeam())}>Dashboard</button></Link>
         <label className='your-build'>Your Builds</label>
         <ul>{userTeams}</ul>
       </section>)

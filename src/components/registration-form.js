@@ -26,19 +26,19 @@ class RegistrationForm extends React.Component {
         e.preventDefault();
         this.onSubmit(e);
         }}>
-        <h2>OverwatchBuddy</h2>
+        <h2 aria-level='1'>Overwatch Buddy</h2>
         <label className='registration-header'>Registration</label>
         <section className='email'>
           <label htmlFor='regEmail' className='email-label'>Email</label>
-          <input type='text' name='regEmail' className='regEmail'></input>
+          <input type='text' aria-label='regEmail' name='regEmail' className='regEmail'></input>
         </section>
         <section className='username'>
           <label htmlFor='regUsername' className='username-label'>Username</label>
-          <input type='text' name='regUsername' className='regUsername'></input>
+          <input type='text' aria-label='regUsername' name='regUsername' className='regUsername'></input>
         </section>
         <section className='password'>
           <label htmlFor='regPassword' className='password-label'>Password</label>
-          <input type='password' name='regPassword' className='regPassword'></input>
+          <input type='password' aria-label='regPassword' name='regPassword' className='regPassword'></input>
         </section>
         <button>Register</button> <br/>
         <Link to='/'><button>Back</button></Link>

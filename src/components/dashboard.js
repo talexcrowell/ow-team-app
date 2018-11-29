@@ -28,11 +28,11 @@ class Dashboard extends React.Component {
     }
 
     return(
-      <div className='dashboard'>
+      <main role='main' className='dashboard'>
         <HeaderBar logout={()=>this.logout()} />
         <br/>
         <DashboardTeams />
-      </div>  
+      </main>  
     )
   }
 }

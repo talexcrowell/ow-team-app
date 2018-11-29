@@ -1,21 +1,11 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
-import { editUserSavedTeam, deleteUserSavedTeam } from '../actions/user';
+import { deleteUserSavedTeam } from '../actions/user';
 import requiresLogin from '../requires-login';
+import'./view-form.css';
 
-class EditForm extends React.Component {
-  onSubmit(e) {
-    const editTeam ={
-      name: e.target.buildName.value,
-      team: this.props.currentTeam,
-      notes: e.target.userNotes.value,
-      id: this.props.teamId
-    };
-    console.log(editTeam);
-    return this.props.dispatch(editUserSavedTeam(editTeam));
-  }
-  
+class ViewForm extends React.Component {
   render() {
   const currentTeam = this.props.currentTeam.map((hero, index) => (
     <li className='hero-review' key={index}>
@@ -64,14 +54,9 @@ class EditForm extends React.Component {
 
   
   return(
-    <form className="review-build" onSubmit={(e)=> {
-      e.preventDefault();
-      this.onSubmit(e);
-    }}>
+    <form className="review-build">
       <section className="review-build">
-        <section className='add-name'>
-          <label htmlFor="buildName" className="buildName-label">Edit Your Build: {this.props.teamName}</label>
-        </section>
+      <h4 aria-level='1' className="view-buildName-label">{this.props.teamCollective.name}</h4>
         <section className='review-team-roster'>
           <ul className='review-team'>{currentTeam}</ul>
         </section> 
@@ -82,23 +67,21 @@ class EditForm extends React.Component {
             <li className='review-stat'>Health: {healthSum}</li>
             <li className='review-stat'>Healing Per Second: {hpsSum}</li>
           </ul>
-          <section className='team-notes'>
-            <label htmlFor='userNotes' className='notes-label'>Notes</label>
-            <textarea name='userNotes' className='userNotes'></textarea>
+          <section className='review-team-notes'>
+            <label htmlFor='userNotes' className='review-notes-label'>Notes</label>
+            <p className='review-userNotes'>{this.props.teamCollective.notes}</p>
           </section>
           <section className='review-abilities'>
-            <h4>Abilities</h4>
+            <h4 aria-level='2'>Abilities</h4>
             <ul className='review-abilities-list'>{abilities}</ul>
           </section>
           <section className='review-ultimates'>
-            <h4>Ultimates</h4>
+            <h4 aria-level='3'>Ultimates</h4>
             <ul className='review-ult-list'>{ultimates}</ul>
           </section>
         </section> 
       </section>
-      <Link to='/build' ><button>Edit Build</button></Link>
-      <button>Save Build</button>
-      <Link to='/dashboard'><button onClick={()=> this.props.dispatch(deleteUserSavedTeam(this.props.teamId))}>Delete Build</button></Link>
+      <Link to='/dashboard'><button className='delete-button' onClick={()=> this.props.dispatch(deleteUserSavedTeam(this.props.teamCollective))}>Delete Build</button></Link>
     </form>
   )
   }
@@ -107,8 +90,8 @@ class EditForm extends React.Component {
 function mapStateToProps(state){
   return{
     currentTeam: state.user.currentTeam,
-    teamId: state.user.teamId
+    teamCollective: state.user.teamCollective
   }
 }
 
-export default requiresLogin()(connect(mapStateToProps)(EditForm));
+export default requiresLogin()(connect(mapStateToProps)(ViewForm));

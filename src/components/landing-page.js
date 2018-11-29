@@ -9,8 +9,8 @@ function LandingPage (props){
   }
   
   return(
-    <div className='landing-page'>
-      <h2>Overwatch Buddy</h2>
+    <main role='main' className='landing-page'>
+      <h2 aria-level='1'>Overwatch Buddy</h2>
       <p className='description'>
       Playing some competitive matches and want to prep a build with your group? 
       Trying to learn and understand the importance of builds in a game? 
@@ -22,8 +22,8 @@ function LandingPage (props){
       whether it is pushing to reach that next ranked tier or to mess around and enjoy themselves.
       </p>
       <p className='description'>
-      For those looking to learn more about the potential within the competitive shooter, 
-      Overwatch's mechanics, Overwatch Buddy is for you. Learn to improve your team building skills, 
+      For those looking to learn more about the potential within the mecahnics of Blizzard's competitive shooter, 
+      Overwatch, Overwatch Buddy is for you. Learn to improve your team building skills, 
       gain further insight into your team's build even when new heroes are introduced, 
       and improve overall as a player. The more information you can learn, 
       the better you and your team will become. With more features on the way 
@@ -34,7 +34,7 @@ function LandingPage (props){
         <Link to='/login'><button>Login</button></Link>
         <Link to='/register'><button>Register</button></Link>
       </section>
-    </div>
+    </main>
   )
 }
 

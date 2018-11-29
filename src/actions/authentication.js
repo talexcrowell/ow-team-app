@@ -50,11 +50,16 @@ export const login = (username, password) => {
         password
       })
     })
-      .then(res => res.json())
-      .then(({authToken}) => storeAuthInfo(authToken, dispatch))
-      .catch(err => {
-        dispatch(authError(err));
-      })
+    .then(res => {
+      if(!res.ok){
+        return res.json().then(err => Promise.reject(err));
+      }
+      return res.json();
+    })
+    .then(({authToken}) => storeAuthInfo(authToken, dispatch))
+    .catch(err => {
+      dispatch(authError(err));
+    })
   } 
 };
 
@@ -68,7 +73,12 @@ export const refreshAuthToken = () => {
         Authoriation: `Bearer ${authToken}`
       }
     })
-    .then(res => res.json())
+    .then(res => {
+      if(!res.ok){
+        return res.json().then(err => Promise.reject(err));
+      }
+      return res.json();
+    })
     .then(({authToken}) => storeAuthInfo(authToken, dispatch))
     .catch(err => {
       dispatch(authError(err));

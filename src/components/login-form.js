@@ -22,11 +22,11 @@ class LoginForm extends React.Component {
       this.onSubmit(e);}}>
         <section className='login-username'>
           <label htmlFor='loginUsername' className='loginUsername-label'>Username</label>
-          <input name='loginUsername' className='loginUsername-input'></input>
+          <input aria-label='loginUsername' name='loginUsername' className='loginUsername-input'></input>
         </section>
         <section className='login-password'>
           <label htmlFor='loginpassword' className='loginPassword-label'>Password</label>
-          <input name='loginPassword' className='loginPassword-input'></input>
+          <input aria-label='loginPassword' name='loginPassword' className='loginPassword-input'></input>
         </section>
         <button>Login</button>
       </form>

@@ -11,7 +11,7 @@ function RegistrationPage (props){
   }
   
   return (
-    <div className='registration'>
+    <div role='main' className='registration'>
       <RegistrationForm />
     </div>
   );

@@ -98,39 +98,32 @@ export class TeamBuild extends React.Component {
       return [...abilities, ...hero.abilities.map((ability, index) => <li key={hero.heroName + index} className='ability'>{ability}</li>)];
     }, []);
 
-    let reviewButton;
-    if(this.props.teamId){
-      reviewButton = <Link to='/edit' ><button>Review Build</button></Link>;
-    } else {
-      reviewButton = <Link to='/review' ><button>Review Build</button></Link>;
-    }
-
     
     return(
-      <div className="team-build">
+      <main role='main' className="team-build">
         <BarUserTeams />
         <section className="hero-roster">
-          <h3 className='roster-label'>Hero Roster</h3>
+          <h3 aria-level='1' className='roster-label'>Hero Roster</h3>
           <ul>{heroes}</ul>
         </section>
         <section className="current-build">
-          <h3 className='current-label'>Current Team</h3>
+          <h3 aria-level='2' className='current-label'>Current Team</h3>
           {buildError}
           <section className='current-team-roster'>
             <ul className='current-team'>{currentTeam}</ul>
           </section>
           <section className='lists-buttons'>
             <section className='ultimates'>
-              <h4>Ultimates</h4>
+              <h4 aria-level='3'>Ultimates</h4>
               <ul className='ult-list'>{ultimates}</ul>
             </section>
             <section className='abilities'>
-              <h4>Abilities</h4>
+              <h4 aria-level='3' >Abilities</h4>
               <ul className='abilities-list'>{abilities}</ul>
             </section>
             <section>
               <button onClick={() => this.fullReset()}>Reset</button>
-              {reviewButton}
+              <Link to='/review' ><button>Review Build</button></Link>
             </section>
           </section>  
           <ul className='stats'>
@@ -140,7 +133,7 @@ export class TeamBuild extends React.Component {
             <li className='stat'>Healing Per Second: {hpsSum}</li>
           </ul>
         </section>
-      </div>
+      </main>
     )
   }
 }

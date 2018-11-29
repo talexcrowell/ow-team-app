@@ -11,7 +11,6 @@ class ReviewForm extends React.Component {
       team: this.props.currentTeam,
       notes: e.target.userNotes.value
     };
-    console.log(newTeam);
     return this.props.dispatch(saveUserCurrentTeam(newTeam));
   }
   
@@ -60,6 +59,11 @@ class ReviewForm extends React.Component {
       <li key={index} className='review-ult'>{hero.ultimate.ultName}</li>
     ));    
     
+    let saveError;
+    if(this.props.error) {
+      saveError = <div>{this.props.error.message}</div>;
+    }
+
   
   return(
     <form className="review-build" onSubmit={(e)=> {
@@ -68,8 +72,10 @@ class ReviewForm extends React.Component {
     }}>
       <section className="review-build">
         <section className='add-name'>
+          <h3 aria-level='1' className='review-heading'>Save Your Build</h3>
+          {saveError}
           <label htmlFor="buildName" className="buildName-label">Name Your Build:</label>
-          <input name= "buildName" className="buildName" placeholder='ex. Dive Comp...'></input>
+          <input aria-label='buildName' name= "buildName" className="buildName" placeholder='ex. Dive Comp...'></input>
         </section>
         <section className='review-team-roster'>
           <ul className='review-team'>{currentTeam}</ul>
@@ -83,20 +89,20 @@ class ReviewForm extends React.Component {
           </ul>
           <section className='team-notes'>
             <label htmlFor='userNotes' className='notes-label'>Notes</label>
-            <textarea name='userNotes' className='userNotes'></textarea>
+            <textarea aria-label='userNotes' name='userNotes' className='userNotes'></textarea>
           </section>
           <section className='review-abilities'>
-            <h4>Abilities</h4>
+            <h4 aria-level='2'>Abilities</h4>
             <ul className='review-abilities-list'>{abilities}</ul>
           </section>
           <section className='review-ultimates'>
-            <h4>Ultimates</h4>
+            <h4 aria-level='3'>Ultimates</h4>
             <ul className='review-ult-list'>{ultimates}</ul>
           </section>
         </section> 
       </section>
-      <Link to='/build' ><button>Edit Build</button></Link>
       <button>Save Build</button>
+      <Link to='/build' ><button>Edit Build</button></Link>
     </form>
   )
   }
@@ -105,7 +111,7 @@ class ReviewForm extends React.Component {
 function mapStateToProps(state){
   return{
     currentTeam: state.user.currentTeam,
-    teamId: state.user.teamId
+    error: state.user.error
   }
 }
 
