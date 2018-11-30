@@ -7,7 +7,8 @@ import {resetUserTeam} from '../actions/user';
 
 class BarUserTeams extends React.Component {
   render(){
-  
+
+    //Returns a listable entry of the user saved team
     const userTeams = this.props.userTeams.map((team, index) => (
       <li key={index}>
         <BarTeam teamIndex={index} />

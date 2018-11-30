@@ -8,13 +8,16 @@ function LoginPage (props) {
   if(props.loggedIn){
     return <Redirect to='/dashboard' />
   }
+
+  //Creates error div if error is detected
   let loginError;
   if(props.error){
     loginError = <div className='login-error' aria-live='polite'>Incorrect username and/or password</div>
   }
   return (
     <section role='main' className='login'>
-      <h2 aria-level='1'>Overwatch Buddy</h2>
+      <img className='login-logo' src="https://i.ibb.co/bgNbS1B/overwatch-buddy-logo.png" alt='Overwatch Buddy logo'></img>
+      <h2 aria-level='1'>Login</h2>  
       {loginError}
       <LoginForm />
       <Link to='/'><button>Back</button></Link>

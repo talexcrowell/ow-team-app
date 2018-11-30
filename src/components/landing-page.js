@@ -10,7 +10,8 @@ function LandingPage (props){
   
   return(
     <main role='main' className='landing-page'>
-      <h2 aria-level='1'>Overwatch Buddy</h2>
+      <h2 aria-level='1'>Welcome to</h2>
+      <img className='landing-logo' src="https://i.ibb.co/bgNbS1B/overwatch-buddy-logo.png" alt='Overwatch Buddy logo'></img>
       <p className='description'>
       Playing some competitive matches and want to prep a build with your group? 
       Trying to learn and understand the importance of builds in a game? 

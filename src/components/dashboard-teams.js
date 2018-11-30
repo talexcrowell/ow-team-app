@@ -7,7 +7,8 @@ import DashboardTeamStats from './dashboard-team-stats'
 class DashboardTeams extends React.Component {
 
   render(){
-
+    
+    //Creates a listable entry of specific user-saved team
     const userTeams = this.props.teams.map((team, index) => (
       <li key={index}>
         <section className='dash-team'>

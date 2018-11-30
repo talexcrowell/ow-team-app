@@ -2,7 +2,7 @@
   display: inline-block;
   background-color: white;
   width: 300px;
-  height: 220px;
+  height: 250px;
   margin: 50px;
   border: 1px white solid;
   border-radius: 4px;
@@ -33,4 +33,10 @@
 .login-error {
   background-color: red;
   font-weight: bold;
+}
+.login-logo{
+  background-color: white;
+  width: 298px;
+  height: auto;
+  padding: 5px;
 }

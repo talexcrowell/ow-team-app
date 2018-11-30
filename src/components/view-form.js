@@ -7,30 +7,32 @@ import'./view-form.css';
 
 class ViewForm extends React.Component {
   render() {
-  const currentTeam = this.props.currentTeam.map((hero, index) => (
-    <li className='hero-review' key={index}>
-    <div class="review-flip-card">
-      <div class="review-flip-card-inner">
-        <div class="review-flip-card-front">
-          <img className='hero-image-review' src={hero.image} alt={hero.heroName}></img>
-          <p className='hero-name-review'>{hero.heroName}</p>
-          <p className='hero-role-review'>{hero.role}</p>
-        </div>
-        <div class="review-flip-card-back">
-          <label className='review-flip-label'>Damage</label>
-          <p className='hero-role-review'>{hero.damage}</p>
-          <label className='review-flip-label'>DPS</label>
-          <p className='hero-role-review'>{hero.dps}</p>
-          <label className='review-flip-label'>Health</label>
-          <p className='hero-role-review'>{hero.health}</p>
-          <label className='review-flip-label'>HPS</label>
-          <p className='hero-role-review'>{hero.hps}</p>
+    //Returns the images/data of heroes within a specific roster
+    const currentTeam = this.props.currentTeam.map((hero, index) => (
+      <li className='hero-review' key={index}>
+      <div class="review-flip-card">
+        <div class="review-flip-card-inner">
+          <div class="review-flip-card-front">
+            <img className='hero-image-review' src={hero.image} alt={hero.heroName}></img>
+            <p className='hero-name-review'>{hero.heroName}</p>
+            <p className='hero-role-review'>{hero.role}</p>
+          </div>
+          <div class="review-flip-card-back">
+            <label className='review-flip-label'>Damage</label>
+            <p className='hero-role-review'>{hero.damage}</p>
+            <label className='review-flip-label'>DPS</label>
+            <p className='hero-role-review'>{hero.dps}</p>
+            <label className='review-flip-label'>Health</label>
+            <p className='hero-role-review'>{hero.health}</p>
+            <label className='review-flip-label'>HPS</label>
+            <p className='hero-role-review'>{hero.hps}</p>
+          </div>
         </div>
       </div>
-    </div>
-  </li>
-  ));
-
+    </li>
+    ));
+    
+    //Calculates the stats for specific roster
     let dmgSum = 0;
     if(this.props.currentTeam.length >0){
       for(let i = 0; i < this.props.currentTeam.length; i++){
@@ -58,11 +60,13 @@ class ViewForm extends React.Component {
         hpsSum += this.props.currentTeam[i].hps;
       }  
     }
-
+    
+    // Returns a list of hero abilities from specific roster
     const abilities = this.props.currentTeam.reduce((abilities, hero) => {
       return [...abilities, ...hero.abilities.map((ability, index) => <li key={hero.heroName + index} className='review-ability'>{ability}</li>)];
     }, []);
 
+    // Returns a list of hero ultimates from specific roster
     const ultimates = this.props.currentTeam.map((hero, index) => (
       <li key={index} className='review-ult'>{hero.ultimate.ultName}</li>
     ));    

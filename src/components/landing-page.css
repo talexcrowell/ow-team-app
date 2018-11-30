@@ -2,7 +2,7 @@
   display: inline-block;
   background-color: white;
   width: 600px;
-  height: 450px;
+  height: 550px;
   margin: 50px;
   border: 1px white solid;
   border-radius: 10px;
@@ -10,6 +10,7 @@
 
 h2 {
   background-color: white;
+  margin: 5px;
 }
 
 .description {
@@ -19,6 +20,7 @@ h2 {
   padding-right: 10px;
   padding-bottom: 5px;
   padding-top: 5px;
+  font-style: italic;
 }
 section, a {
   background-color: white;

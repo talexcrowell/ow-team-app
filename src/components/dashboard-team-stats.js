@@ -4,15 +4,18 @@ import {connect} from 'react-redux';
 class DashboardTeamStats extends React.Component {
 
   render(){    
-    
+  
+  //Returns an array of hero rosters from user-saved teams  
   const teamSelector = this.props.teams.map(collective => {
     return collective.team;
   });
 
+  //Returns an array of user-saved teams
   const teamName = this.props.teams.map(collective => {
     return collective;
   })
 
+  //Calculates the stats for specific roster
   let dmgStats=0;
   for(let i=0; i < teamSelector[this.props.teamIndex].length; i++){
     dmgStats += teamSelector[this.props.teamIndex][i].dps; 
@@ -21,25 +24,20 @@ class DashboardTeamStats extends React.Component {
 
   let dpsStats=0;
   for(let i=0; i < teamSelector[this.props.teamIndex].length; i++){
-
     dpsStats += teamSelector[this.props.teamIndex][i].dps;
-
   }
 
   let healthStats=0;
   for(let i=0; i < teamSelector[this.props.teamIndex].length; i++){
-
-      healthStats += teamSelector[this.props.teamIndex][i].health;
-    
+    healthStats += teamSelector[this.props.teamIndex][i].health;
   }
 
   let hpsStats=0;
   for(let i=0; i < teamSelector[this.props.teamIndex].length; i++){
-   
-      hpsStats += teamSelector[this.props.teamIndex][i].hps;
-    
+    hpsStats += teamSelector[this.props.teamIndex][i].hps;
   }
 
+  //Returns the images/data of heroes within a specific roster
   const images = teamSelector[this.props.teamIndex].map((hero)=>{
     return (
       <li key={hero.heroName} className='dash-hero'>

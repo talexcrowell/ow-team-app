@@ -20,6 +20,7 @@ class RegistrationForm extends React.Component {
       return <Redirect to='/dashboard' />
     }
 
+    //Creates error div if error is detected
     let registrationError;
     if(this.props.error){
       registrationError = <div className='registration-error' aria-live='polite'>Please fill all fields</div>
@@ -30,8 +31,8 @@ class RegistrationForm extends React.Component {
         e.preventDefault();
         this.onSubmit(e);
         }}>
-        <h2 aria-level='1'>Overwatch Buddy</h2>
-        <label className='registration-header'>Registration</label>
+        <img className='register-logo' src="https://i.ibb.co/bgNbS1B/overwatch-buddy-logo.png" alt='Overwatch Buddy logo'></img>
+        <h2 aria-level='1'>Registration</h2>
         {registrationError}
         <section className='email'>
           <label htmlFor='regEmail' className='email-label'>Email</label>

@@ -1,4 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+
+(https://overwatch-buddy.herokuapp.com/)
 
 ## Overview
 
@@ -13,7 +15,7 @@ Overwatch Buddy is an application that allows users to customize, build, and sav
 - And many more! <br>
 
 ### Tech Stack
-Full Stack Build: <br>
+Full Stack Build <br><br>
 Frontend: React, Redux, Enzyme (https://github.com/talexcrowell/ow-team-app-client) <br>
 Backend: Node, Express, MongoDB, Mongoose, JWT (https://github.com/talexcrowell/ow-team-app-server) <br>
 

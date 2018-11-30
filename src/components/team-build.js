@@ -21,12 +21,14 @@ export class TeamBuild extends React.Component {
   }
 
   render() {
+    //Creates error div if error is detected
     let buildError;
     if(this.props.currentTeam.length > 6){
       this.props.currentTeam.length = 6;
       buildError = <div className='build-error'>You have reached the maximimum number of heroes!</div>
     }
 
+    //Calculates the stats for specific roster
     let dmgSum = 0;
     if(this.props.currentTeam.length >0){
       for(let i = 0; i < this.props.currentTeam.length; i++){
@@ -55,7 +57,7 @@ export class TeamBuild extends React.Component {
       }
     }
 
-    
+    //Generates roster of current selected heroes for team
 
     const currentTeam = this.props.currentTeam.map((hero, index) => (
       <li className='hero-current' key={index}>
@@ -69,7 +71,8 @@ export class TeamBuild extends React.Component {
         }>-</button>
       </li>
     ));
-
+      
+    // Check for doubles when adding/editing teams to avoid double adding heroes
     let double = [];
     for(let i=0; i < this.props.currentTeam.length; i++){
       double.push(this.props.currentTeam[i].id);
@@ -77,6 +80,7 @@ export class TeamBuild extends React.Component {
     
     const heroList = this.props.heroes.filter(hero => !double.includes(hero.id));
 
+    // Returns array of heroes after filter is applied
     const heroes = heroList.map((hero, index) => (
       <li className='hero' key={index}>
         <div class="current-flip-card">
@@ -110,11 +114,12 @@ export class TeamBuild extends React.Component {
       </li>
     ));
     
-
+    // Returns a list of hero ultimates from specific roster
     const ultimates = this.props.currentTeam.map((hero, index) => (
       <li key={index}>{hero.ultimate.ultName}</li>
     ));
 
+    // Returns a list of hero abilities from specific roster
     const abilities = this.props.currentTeam.reduce((abilities, hero) => {
       return [...abilities, ...hero.abilities.map((ability, index) => <li key={hero.heroName + index} className='ability'>{ability}</li>)];
     }, []);

@@ -13,6 +13,7 @@ class BuildReview extends React.Component{
         <Redirect to='/dashboard' />
       );
     }
+    
     return(
       <main role='main' className='team-review'>
         <BarUserTeams />

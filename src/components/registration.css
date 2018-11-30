@@ -48,3 +48,15 @@ button {
   margin: 5px;
   vertical-align: center;
 }
+
+.registration-error{
+  background-color: red;
+  font-weight: bold;
+}
+
+.register-logo{
+  padding: 5px;
+  background-color: white;
+  width: 298px;
+  height: auto;
+}
