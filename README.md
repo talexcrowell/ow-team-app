@@ -1,4 +1,4 @@
-![alt text](https://i.ibb.co/bgNbS1B/overwatch-buddy-logo.png)
+![Overwatch Buddy Logo](https://i.ibb.co/bgNbS1B/overwatch-buddy-logo.png)
 <br>
 (https://overwatch-buddy.herokuapp.com/)
 
@@ -40,26 +40,26 @@ If you need to import data into your mongo database, I have included seed data f
 
 ### Screenshots
 Landing Page
-![alt text](i.ibb.co/9HkPnjm/Overwatch-Buddy-Landing.png)
+![Landing Page](https://i.ibb.co/9HkPnjm/Overwatch-Buddy-Landing.png)
 
 Registration
-![alt text](i.ibb.co/thgLfTn/Overwatch-Buddy-Register.png)
+![Registration](https://i.ibb.co/thgLfTn/Overwatch-Buddy-Register.png)
 
 Login
-![alt text]()
+![Login](https://i.ibb.co/m54nrdW/Overwatch-Buddy-Login.png)
 
 Dashboard
-![alt text]()
+![Dashboard](https://i.ibb.co/Yk24S58/Overwatch-Buddy-Dashboard.png)
 
 Team Build
-![alt text]()
-![alt text]()
+![Team Build1](https://i.ibb.co/GdbVKr9/Overwatch-Buddy-Team-Build1.png)
+![Team Build2](https://i.ibb.co/z7mkQHV/Overwatch-Buddy-Team-Build2.png)
 
 Team Review
-![alt text]()
+![Team Review](https://i.ibb.co/g9XrpHL/Overwatch-Buddy-Team-Review.png)
 
 Team View
-![alt text]()
+![Team View](https://i.ibb.co/68CPw8V/Overwatch-Buddy-Team-View.png)
 
 ### Disclaimer
 Overwatch is the property of Blizzard Entertainment including all aspects of Overwatch in terms of images, heroes, etc. This is a tool to improve the competitive community and I am not seeking any monetary gain from this application.
