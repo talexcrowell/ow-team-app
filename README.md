@@ -1,5 +1,5 @@
-
-
+![alt text](https://i.ibb.co/bgNbS1B/overwatch-buddy-logo.png)
+<br>
 (https://overwatch-buddy.herokuapp.com/)
 
 ## Overview
@@ -17,7 +17,7 @@ Overwatch Buddy is an application that allows users to customize, build, and sav
 ### Tech Stack
 Full Stack Build <br><br>
 Frontend: React, Redux, Enzyme (https://github.com/talexcrowell/ow-team-app-client) <br>
-Backend: Node, Express, MongoDB, Mongoose, JWT (https://github.com/talexcrowell/ow-team-app-server) <br>
+Backend: Node, Express, MongoDB, Mongoose, JWT, Mocha, Chai (https://github.com/talexcrowell/ow-team-app-server) <br>
 
 ### Component Sources
 - Landing Page (src/components/landing-page.js)
@@ -37,3 +37,29 @@ Client: (https://github.com/talexcrowell/ow-team-app-client) <br>
 Server:(https://github.com/talexcrowell/ow-team-app-server) <br>
 <br>
 If you need to import data into your mongo database, I have included seed data for this project and a script to import the seed data (therefore you just have to run ```node seed-database.js```). Please feel free to modify the data and components to fit your project's needs.
+
+### Screenshots
+Landing Page
+![alt text](i.ibb.co/9HkPnjm/Overwatch-Buddy-Landing.png)
+
+Registration
+![alt text](i.ibb.co/thgLfTn/Overwatch-Buddy-Register.png)
+
+Login
+![alt text]()
+
+Dashboard
+![alt text]()
+
+Team Build
+![alt text]()
+![alt text]()
+
+Team Review
+![alt text]()
+
+Team View
+![alt text]()
+
+### Disclaimer
+Overwatch is the property of Blizzard Entertainment including all aspects of Overwatch in terms of images, heroes, etc. This is a tool to improve the competitive community and I am not seeking any monetary gain from this application.
