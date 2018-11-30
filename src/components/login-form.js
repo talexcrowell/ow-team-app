@@ -26,7 +26,7 @@ class LoginForm extends React.Component {
         </section>
         <section className='login-password'>
           <label htmlFor='loginpassword' className='loginPassword-label'>Password</label>
-          <input aria-label='loginPassword' name='loginPassword' className='loginPassword-input'></input>
+          <input aria-label='loginPassword' name='loginPassword' className='loginPassword-input' type='Password'></input>
         </section>
         <button>Login</button>
       </form>

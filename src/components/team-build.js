@@ -56,7 +56,6 @@ export class TeamBuild extends React.Component {
     }
 
     
-  
 
     const currentTeam = this.props.currentTeam.map((hero, index) => (
       <li className='hero-current' key={index}>
@@ -98,7 +97,7 @@ export class TeamBuild extends React.Component {
               <p className='hero-role'>{hero.hps}</p>
               <label className='current-flip-label'>Ultimate</label>
               <p className='hero-role'>{hero.ultimate.ultName}</p>
-              <p className='hero-role'>{hero.ultimate.desc}</p>
+              <p className='hero-ult-desc'>{hero.ultimate.desc}</p>
             </div>
           </div>
         </div>
