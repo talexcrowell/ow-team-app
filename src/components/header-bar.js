@@ -4,7 +4,7 @@ import {Link, Redirect} from 'react-router-dom';
 import requiresLogin from '../requires-login';
 import { resetUserTeam } from '../actions/user';
 
-function HeaderBar (props){
+export function HeaderBar (props){
   if(!props.loggedIn){
     return(
       <Redirect to='/landing-page' />

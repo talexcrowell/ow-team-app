@@ -3,16 +3,11 @@ import {shallow, mount} from 'enzyme';
 import { Provider } from 'react-redux';
 import store from '../store';
 
-import BarTeam from './bar-team';
+import {LoginPage} from './login-page';
 
-describe('<BarTeam/>', () => {
- 
+describe('<LoginPage />', () => {
   it('Renders without crashing', () => {
-    shallow(
-      <Provider store={store}>
-        <BarTeam />
-      </Provider>
-    );
+    shallow(<LoginPage />);
   });
 
 });

@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-class BarTeam extends React.Component {
+export class BarTeam extends React.Component {
 
   render(){
 

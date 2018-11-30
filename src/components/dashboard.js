@@ -9,7 +9,7 @@ import HeaderBar from './header-bar';
 import './dashboard.css';
 import DashboardTeams from './dashboard-teams';
 
-class Dashboard extends React.Component {
+export class Dashboard extends React.Component {
   componentDidMount() {
     this.props.dispatch(fetchUserTeams());
   }

@@ -6,7 +6,7 @@ import ViewForm from './view-form';
 import BarUserTeams from './bar-user-teams';
 import './build-review.css';
 
-function BuildView (props) {
+export function BuildView (props) {
   if(!props.loggedIn){
     return(
       <Redirect to='/landing-page' />

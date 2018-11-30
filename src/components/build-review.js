@@ -6,7 +6,7 @@ import ReviewForm from './review-form';
 import BarUserTeams from './bar-user-teams';
 import './build-review.css';
 
-class BuildReview extends React.Component{
+export class BuildReview extends React.Component{
  render() { 
     if (this.props.savingTeam){
       return(

@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import { saveUserCurrentTeam } from '../actions/user';
 import requiresLogin from '../requires-login';
 
-class ReviewForm extends React.Component {
+export class ReviewForm extends React.Component {
   onSubmit(e) {
     const newTeam ={
       name: e.target.buildName.value,

@@ -5,7 +5,7 @@ import { deleteUserSavedTeam } from '../actions/user';
 import requiresLogin from '../requires-login';
 import'./view-form.css';
 
-class ViewForm extends React.Component {
+export class ViewForm extends React.Component {
   render() {
     //Returns the images/data of heroes within a specific roster
     const currentTeam = this.props.currentTeam.map((hero, index) => (

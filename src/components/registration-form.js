@@ -4,7 +4,7 @@ import {Link, Redirect} from 'react-router-dom';
 import { registerUser } from '../actions/user';
 import './registration.css';
 
-class RegistrationForm extends React.Component {
+export class RegistrationForm extends React.Component {
   onSubmit(e) {
     const newUser = {
       username: e.target.regUsername.value,
@@ -60,6 +60,3 @@ const mapPropsToState = state => ({
 });
 
 export default connect(mapPropsToState)(RegistrationForm);
-
-// https://codesandbox.io/s/6jy2vpqqor
-// https://codesandbox.io/s/62k40w0w43

@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import {viewUserTeam} from '../actions/user';
 import DashboardTeamStats from './dashboard-team-stats'
 
-class DashboardTeams extends React.Component {
+export class DashboardTeams extends React.Component {
 
   render(){
     

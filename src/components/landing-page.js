@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {Link, Redirect} from 'react-router-dom';
 import './landing-page.css'
 
-function LandingPage (props){
+export function LandingPage (props){
   if(props.loggedIn){
     return <Redirect to='/dashboard' />
   }
@@ -31,7 +31,7 @@ function LandingPage (props){
       (stat tracking, record tracking,  Esports news etc.), 
       Overwatch Buddy is and will become a more incredible tool to propel you into the pro leagues!
       </p>
-      <section className='navlinks'>
+      <section className='nav-buttons'>
         <Link to='/login'><button>Login</button></Link>
         <Link to='/register'><button>Register</button></Link>
       </section>

@@ -3,14 +3,13 @@ import {shallow, mount} from 'enzyme';
 import { Provider } from 'react-redux';
 import store from '../store';
 
-import BarTeam from './bar-team';
+import {ReviewForm} from './review-form';
 
-describe('<BarTeam/>', () => {
- 
+describe('<ReviewForm />', () => {
   it('Renders without crashing', () => {
     shallow(
       <Provider store={store}>
-        <BarTeam />
+        <ReviewForm />
       </Provider>
     );
   });

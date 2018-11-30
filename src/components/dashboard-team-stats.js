@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-class DashboardTeamStats extends React.Component {
+export class DashboardTeamStats extends React.Component {
 
   render(){    
   

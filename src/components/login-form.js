@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
 import { login } from '../actions/authentication';
 
-class LoginForm extends React.Component {
+export class LoginForm extends React.Component {
   onSubmit(e) {
     const user = {
       username: e.target.loginUsername.value,
