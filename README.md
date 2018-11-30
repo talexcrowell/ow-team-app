@@ -10,6 +10,7 @@ Overwatch Buddy is an application that allows users to customize, build, and sav
 - Hero Overview with Roster and Complete description of heroes. <br>
 - Overwatch News and Overwatch League News Updates.<br>
 - Build guide and FAQ for new users. <br>
+- And many more! <br>
 
 ### Tech Stack
 Full Stack Build: <br>
@@ -28,7 +29,7 @@ Backend: Node, Express, MongoDB, Mongoose, JWT (https://github.com/talexcrowell/
 ### Developer Notes
 This project is meant to act as a foundation to structure or inspire future apps. As a true believer of open source and combined efforts, I want developers to have the ability to manipulate my code and maybe give insight on how to solve problems that they are having on personal projects. 
 
-## Instructions to Run App
+### Instructions to Run App
 To run this project, you will need to copy the repository for both the client and server and make sure you are running a local version of mongoDB.<br>
 Client: (https://github.com/talexcrowell/ow-team-app-client) <br>
 Server:(https://github.com/talexcrowell/ow-team-app-server) <br>
