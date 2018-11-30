@@ -39,27 +39,27 @@ Server:(https://github.com/talexcrowell/ow-team-app-server) <br>
 If you need to import data into your mongo database, I have included seed data for this project and a script to import the seed data (therefore you just have to run ```node seed-database.js```). Please feel free to modify the data and components to fit your project's needs.
 
 ### Screenshots
-Landing Page
-![Landing Page](https://i.ibb.co/9HkPnjm/Overwatch-Buddy-Landing.png)
+Landing Page<br>
+![Landing Page](https://i.ibb.co/jkPthF9/Overwatch-Buddy-Landing.png)<br>
 
-Registration
-![Registration](https://i.ibb.co/thgLfTn/Overwatch-Buddy-Register.png)
+Registration<br>
+![Registration](https://i.ibb.co/7zPkcdB/Overwatch-Buddy-Register.png)<br>
 
-Login
-![Login](https://i.ibb.co/m54nrdW/Overwatch-Buddy-Login.png)
+Login<br>
+![Login](https://i.ibb.co/zVZ3WCv/Overwatch-Buddy-Login.png)<br>
 
-Dashboard
-![Dashboard](https://i.ibb.co/Yk24S58/Overwatch-Buddy-Dashboard.png)
+Dashboard<br>
+![Dashboard](https://i.ibb.co/T8cDGQR/Overwatch-Buddy-Dashboard.png)<br>
 
-Team Build
-![Team Build1](https://i.ibb.co/GdbVKr9/Overwatch-Buddy-Team-Build1.png)
-![Team Build2](https://i.ibb.co/z7mkQHV/Overwatch-Buddy-Team-Build2.png)
+Team Build<br>
+![Team Build1](https://i.ibb.co/L02CLsr/Overwatch-Buddy-Team-Build1.png)<br>
+![Team Build2](https://i.ibb.co/TbwCYqM/Overwatch-Buddy-Team-Build2.png)<br>
 
-Team Review
-![Team Review](https://i.ibb.co/g9XrpHL/Overwatch-Buddy-Team-Review.png)
+Team Review<br>
+![Team Review](https://i.ibb.co/KhQ5kRp/Overwatch-Buddy-Team-Review.png)<br>
 
-Team View
-![Team View](https://i.ibb.co/68CPw8V/Overwatch-Buddy-Team-View.png)
+Team View<br>
+![Team View](https://i.ibb.co/9h5Tghz/Overwatch-Buddy-Team-View.png)<br>
 
 ### Disclaimer
 Overwatch is the property of Blizzard Entertainment including all aspects of Overwatch in terms of images, heroes, etc. This is a tool to improve the competitive community and I am not seeking any monetary gain from this application.
