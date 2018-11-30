@@ -29,3 +29,8 @@
   margin: 5px;
   vertical-align: center;
 }
+
+.login-error {
+  background-color: red;
+  font-weight: bold;
+}

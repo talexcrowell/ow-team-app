@@ -125,7 +125,6 @@ export const deleteUserSavedTeam= (team) =>{
 }
 
 export const registerUser = user => {
-  console.log(user);
   return dispatch => {
     fetch(`${API_BASE_URL}/api/users`, {
       method: 'POST',

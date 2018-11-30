@@ -9,7 +9,6 @@ class LoginForm extends React.Component {
       username: e.target.loginUsername.value,
       password: e.target.loginPassword.value
     };
-    console.log(user);
     return this.props.dispatch(login(user.username, user.password));
   }
   render(){

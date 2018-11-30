@@ -11,7 +11,6 @@ class RegistrationForm extends React.Component {
       email: e.target.regEmail.value,
       password: e.target.regPassword.value
     };
-    console.log(newUser);
     return this.props.dispatch(registerUser(newUser))
   }
   
@@ -23,7 +22,6 @@ class RegistrationForm extends React.Component {
 
     let registrationError;
     if(this.props.error){
-      console.log(this.props.error);
       registrationError = <div className='registration-error' aria-live='polite'>Please fill all fields</div>
     }
 

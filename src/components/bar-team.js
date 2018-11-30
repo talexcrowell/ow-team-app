@@ -12,8 +12,6 @@ class BarTeam extends React.Component {
       return collective;
     });
 
-    console.log(teamSelector);
-
     const teamImages = teamSelector[this.props.teamIndex].map(hero => {
       return(
         <li key={hero.heroName} className='bar-hero'>
