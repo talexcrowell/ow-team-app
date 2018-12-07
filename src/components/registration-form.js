@@ -31,18 +31,18 @@ export class RegistrationForm extends React.Component {
         e.preventDefault();
         this.onSubmit(e);
         }}>
-        <img className='register-logo' src="https://i.ibb.co/bgNbS1B/overwatch-buddy-logo.png" alt='Overwatch Buddy logo'></img>
-        <h2 aria-level='1'>Registration</h2>
+        <img className='register-logo col-12' src="https://i.ibb.co/bgNbS1B/overwatch-buddy-logo.png" alt='Overwatch Buddy logo'></img>
+        <h2 aria-level='1' className='col-12'>Registration</h2>
         {registrationError}
-        <section className='email'>
+        <section className='email col-12'>
           <label htmlFor='regEmail' className='email-label'>Email</label>
           <input type='text' aria-label='regEmail' name='regEmail' className='regEmail'></input>
         </section>
-        <section className='username'>
+        <section className='username col-12'>
           <label htmlFor='regUsername' className='username-label'>Username</label>
           <input type='text' aria-label='regUsername' name='regUsername' className='regUsername'></input>
         </section>
-        <section className='password'>
+        <section className='password col-12'>
           <label htmlFor='regPassword' className='password-label'>Password</label>
           <input type='password' aria-label='regPassword' name='regPassword' className='regPassword'></input>
         </section>

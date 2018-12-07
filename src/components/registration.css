@@ -3,22 +3,28 @@
   border: 1px white solid;
   border-radius: 4px;
   display: inline-block;
-  width: 300px;
-  margin: 50px;
+  text-align:center;
+  max-width: 500px;
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 h2{
+  margin-top: 0;
   background-color: white;
+  font-size: 30px;
+  height: 32px;
 }
 
 .regForm .registration-header{
   display: inline-block;
   background-color: white;
   font-size: 28px;
-  width: 298px;
   margin-bottom: 10px;
 }
 
+/*universal button NEEDS MOVING */
 button {
   background-color: orange;
   border-radius: 6px;
@@ -28,25 +34,29 @@ button {
 }
 
 .email-label, .username-label, .password-label  {
-  float: left;
   font-weight: bold;
+  float: left;
   margin: 2.5px;
+  width: 121px;
   background-color: white;
   vertical-align: center;
+  text-align: left;
 }
 
 .regEmail, .regUsername, .regPassword {
-  float: right;
   background-color: white;
+  float: right;
   border-radius: 4px;
-  width: 170px;
+  margin: 5px;
+  font-size: 20px;
 }
 
 .email, .username, .password {
-  width: 290px;
-  height: 24px;
-  margin: 5px;
+  height:50px;
   vertical-align: center;
+  padding: 5px;
+  font-size: 25px;
+  margin-bottom: 20px;
 }
 
 .registration-error{
@@ -57,6 +67,5 @@ button {
 .register-logo{
   padding: 5px;
   background-color: white;
-  width: 298px;
   height: auto;
 }
