@@ -1,9 +1,12 @@
 .login{
   display: inline-block;
   background-color: white;
-  width: 300px;
-  height: 250px;
-  margin: 50px;
+  max-width: 500px;
+  height: auto;
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align:center;
   border: 1px white solid;
   border-radius: 4px;
 }
@@ -14,20 +17,27 @@
 
 .loginUsername-input, .loginPassword-input{
   float: right;
-  background-color: white; 
+  background-color: white;
+  font-size: 20px;
+  border-radius: 4px;
+  margin: 5px;
 }
 
 .loginUsername-label, .loginPassword-label {
   background-color: white;
   float: left;
   vertical-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  margin: 2.5px;
+  width: 100px;
 }
 
 .login-username, .login-password {
-  width: 290px;
-  height: 24px;
+  height: 60px;
   margin: 5px;
   vertical-align: center;
+  font-size: 25px;
 }
 
 .login-error {
@@ -36,7 +46,10 @@
 }
 .login-logo{
   background-color: white;
-  width: 298px;
   height: auto;
   padding: 5px;
+}
+
+.login-buttons{
+  margin: 2.5px;
 }
