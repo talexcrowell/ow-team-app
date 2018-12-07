@@ -256,6 +256,7 @@
   font-weight: bold;
 }
 
+/* Flip cards */
 .current-flip-card {
   background-color: transparent;
   width: 120px;

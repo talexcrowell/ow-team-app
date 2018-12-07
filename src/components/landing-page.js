@@ -10,19 +10,19 @@ export function LandingPage (props){
   
   return(
     <main role='main' className='landing-page'>
-      <h2 aria-level='1'>Welcome to</h2>
-      <img className='landing-logo' src="https://i.ibb.co/bgNbS1B/overwatch-buddy-logo.png" alt='Overwatch Buddy logo'></img>
-      <p className='description'>
+      <h2 aria-level='1' className='col-12'>Welcome to</h2>
+      <img className='landing-logo col-12' src="https://i.ibb.co/bgNbS1B/overwatch-buddy-logo.png" alt='Overwatch Buddy logo'></img>
+      <p className='description col-12'>
       Playing some competitive matches and want to prep a build with your group? 
       Trying to learn and understand the importance of builds in a game? 
       See a build in the pro scene and want to customize it to be your own?
       </p>
-      <p className='description'>
+      <p className='description col-12'>
       With the rise of popularity in Esports and live streaming, 
       people have been more open about spending their time playing games with friends 
       whether it is pushing to reach that next ranked tier or to mess around and enjoy themselves.
       </p>
-      <p className='description'>
+      <p className='description col-12'>
       For those looking to learn more about the potential within the mecahnics of Blizzard's competitive shooter, 
       Overwatch, Overwatch Buddy is for you. Learn to improve your team building skills, 
       gain further insight into your team's build even when new heroes are introduced, 

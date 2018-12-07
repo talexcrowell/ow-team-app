@@ -21,7 +21,7 @@ export class DashboardTeams extends React.Component {
 
 
     return(
-    <section className="dash-userteams">
+    <section className="dash-userteams col-12">
       <label className='dash-your-build'>Your Builds</label>
       <ul>{userTeams}</ul>
     </section>);
