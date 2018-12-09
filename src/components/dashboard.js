@@ -28,7 +28,7 @@ export class Dashboard extends React.Component {
     }
 
     return(
-      <main role='main' className='dashboard col-12'>
+      <main role='main' className='dashboard'>
         <HeaderBar logout={()=>this.logout()} />
         <br/>
         <DashboardTeams />

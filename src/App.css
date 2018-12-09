@@ -63,24 +63,34 @@
 }
 
 /* Mobile defaults */
-.col-3, .col-4, .col-6, .col-12 {
+.col-2, .col-3, .col-4, .col-6, .col-9, .col-12 {
   width: 100%;
 }
 
 
 /* Non-mobile, grid */
-@media only screen and (min-width: 640px) {
+@media only screen and (min-width: 800px) {
+  .col-2 {
+    width: 16.66%;
+  }
+  .col-2-3{
+    width: 22.5%;
+  }
+
   .col-3 {
     width: 25%;
   }
 
-  
   .col-4 {
     width: 33.3%;
   }
 
   .col-6 {
     width: 50%;
+  }
+
+  .col-9{
+    width: 75%;
   }
 
   .col-12 {

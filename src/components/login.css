@@ -16,11 +16,12 @@
 }
 
 .loginUsername-input, .loginPassword-input{
-  float: right;
+
   background-color: white;
   font-size: 20px;
   border-radius: 4px;
   margin: 5px;
+  width: 200px;
 }
 
 .loginUsername-label, .loginPassword-label {
@@ -30,7 +31,7 @@
   font-size: 25px;
   font-weight: bold;
   margin: 2.5px;
-  width: 100px;
+  width: 150px;
 }
 
 .login-username, .login-password {
@@ -42,6 +43,7 @@
 
 .login-error {
   background-color: red;
+  border-color: white;
   font-weight: bold;
 }
 .login-logo{
