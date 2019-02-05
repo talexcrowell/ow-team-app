@@ -127,12 +127,12 @@ export class TeamBuild extends React.Component {
     
     return(
       <main role='main' className="team-build">
-        <BarUserTeams />
         <h3 aria-level='1' className='roster-label'>Hero Roster</h3>
         <section className="hero-roster">
           <ul>{heroes}</ul>
         </section>
         <section className="current-build">
+          <BarUserTeams />
           <h3 aria-level='2' className='current-label'>Current Team</h3>
           {buildError}
           <section className='current-team-roster'>

@@ -1,0 +1,24 @@
+.headerbar{
+  background-color: #282c34;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom:10px;
+}
+
+.action-buttons{
+  background-color:#282c34;
+  display: inline-block;
+  height: 45px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 50%;
+  margin-right: 0px;
+  float: left;
+}
+
+.current-user{
+  width: 50%;
+  float: left;
+  clear: right;
+}

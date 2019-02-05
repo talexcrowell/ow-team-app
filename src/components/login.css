@@ -1,7 +1,9 @@
 .login{
   display: inline-block;
-  background-color: white;
-  max-width: 500px;
+  background-color: #282c34;
+  max-width: 600px;
+  min-width: 300px;
+  width: 100%;
   height: auto;
   margin-top: 25px;
   margin-left: auto;
@@ -12,11 +14,11 @@
 }
 
 .loginform{
-  background-color: white; 
+  background-color: #282c34; 
 }
 
 .loginUsername-input, .loginPassword-input{
-
+  color: black;
   background-color: white;
   font-size: 20px;
   border-radius: 4px;
@@ -25,7 +27,7 @@
 }
 
 .loginUsername-label, .loginPassword-label {
-  background-color: white;
+  background-color: #282c34;
   float: left;
   vertical-align: center;
   font-size: 25px;

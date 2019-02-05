@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {Link, Redirect} from 'react-router-dom';
 import requiresLogin from '../requires-login';
 import { resetUserTeam } from '../actions/user';
+import './header-bar.css';
 
 export function HeaderBar (props){
   if(!props.loggedIn){
