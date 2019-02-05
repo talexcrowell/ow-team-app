@@ -42,7 +42,7 @@ export class DashboardTeamStats extends React.Component {
   //Returns the images/data of heroes within a specific roster
   const images = teamSelector[this.props.teamIndex].map((hero)=>{
     return (
-      <li key={hero.heroName} className='dash-hero col-2'>
+      <li key={hero.heroName} className='dash-hero'>
         <img src={hero.image} alt={hero.heroName+this.props.teamIndex.name} className='dash-hero-image'></img>
         <label htmlFor='dash-hero-name' className='dash-hero-name-label'>Name</label>
         <p className='dash-hero-name'>{hero.heroName}</p>
@@ -55,17 +55,17 @@ export class DashboardTeamStats extends React.Component {
 
   return(
     <section>
-      <label className='dash-team-name col-12'>{teamName[this.props.teamIndex].name}</label>
-        <ul className='dash-team-roster col-9'>{images}</ul>
-      <section className='dash-team-details col-2-3'>
-        <label htmlFor='dash-stats' className='dash-stats-label col-12'>Stats</label>
-        <ul className='dash-stats col-12'>
-          <li className='dash-stat col-12'>Damage: {dmgStats} </li>
-          <li className='dash-stat col-12'>Damage Per Second: {dpsStats}</li>
-          <li className='dash-stat col-12'>Health: {healthStats} </li>
-          <li className='dash-stat col-12'>Healing Per Second: {hpsStats}</li>
+      <label className='dash-team-name'>{teamName[this.props.teamIndex].name}</label>
+        <ul className='dash-team-roster'>{images}</ul>
+      <section className='dash-team-details'>
+        <label htmlFor='dash-stats' className='dash-stats-label'>Stats</label>
+        <ul className='dash-stats'>
+          <li className='dash-stat'>Damage: {dmgStats} </li>
+          <li className='dash-stat'>Damage Per Second: {dpsStats}</li>
+          <li className='dash-stat'>Health: {healthStats} </li>
+          <li className='dash-stat'>Healing Per Second: {hpsStats}</li>
         </ul>
-        <p className='dash-team-notes col-12'>{teamSelector[this.props.teamIndex].notes || 'No notes for this build'}</p>
+        <p className='dash-team-notes'>{teamSelector[this.props.teamIndex].notes || 'No notes for this build'}</p>
         <Link to='/view'><button onClick={() => this.props.dispatch(viewUserTeam(teamSelector[this.props.teamIndex]))}>View Build</button></Link> 
       </section>
     </section>)

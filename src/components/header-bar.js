@@ -12,9 +12,9 @@ export function HeaderBar (props){
   }
 
   return(
-    <section className='headerbar col-12'>
-      <h3 aria-level='1' className='col-6'>Welcome {props.currentUser.username}</h3>
-      <div className='action-buttons col-6'>
+    <section className='headerbar'>
+      <h3 aria-level='1' className='current-user'>Welcome {props.currentUser.username}</h3>
+      <div className='action-buttons'>
         <Link to='/build' ><button className='build' onClick={() => props.dispatch(resetUserTeam())}>Build A New Team</button></Link>  
         <button className='logout' onClick={() =>props.logout()}>Logout</button>
       </div>

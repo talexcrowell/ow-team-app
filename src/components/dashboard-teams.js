@@ -9,7 +9,7 @@ export class DashboardTeams extends React.Component {
     //Creates a listable entry of specific user-saved team
     const userTeams = this.props.teams.map((team, index) => (
       <li key={index}>
-        <section className='dash-team col-12'>
+        <section className='dash-team'>
           <DashboardTeamStats teamIndex={index} />
         </section>
       </li>
@@ -18,7 +18,7 @@ export class DashboardTeams extends React.Component {
 
     return(
     <section className="dash-userteams">
-      <label className='dash-your-build col-12'>Your Builds</label>
+      <label className='dash-your-build'>Your Builds</label>
       <ul>{userTeams}</ul>
     </section>);
   }

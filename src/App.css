@@ -32,9 +32,10 @@
 }
 
 * {
-  background-color: gainsboro;
+  background-color: #03002e;
   font-family: 'Noto Sans SC', sans-serif;
   box-sizing: border-box;
+  color: white;
 }
 
 .row {
@@ -42,58 +43,4 @@
   padding-left: 20px;
   padding-right: 20px;
   margin: 0 auto;
-}
-
-/* Clearfix */
-.row::before,
-.row::after {
-  display: table;
-  content: '';
-}
-
-.row::after {
-  clear: both;
-}
-
-.col-3, .col-4, .col-6, .col-12 {
-  float: left;
-
-  padding-left: 1.04166666%;
-  padding-right: 1.04166666%;
-}
-
-/* Mobile defaults */
-.col-2, .col-3, .col-4, .col-6, .col-9, .col-12 {
-  width: 100%;
-}
-
-
-/* Non-mobile, grid */
-@media only screen and (min-width: 800px) {
-  .col-2 {
-    width: 16.66%;
-  }
-  .col-2-3{
-    width: 22.5%;
-  }
-
-  .col-3 {
-    width: 25%;
-  }
-
-  .col-4 {
-    width: 33.3%;
-  }
-
-  .col-6 {
-    width: 50%;
-  }
-
-  .col-9{
-    width: 75%;
-  }
-
-  .col-12 {
-    width: 100%;
-  }
 }
