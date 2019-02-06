@@ -238,6 +238,8 @@
   height: auto;
   margin-bottom: 10px;
   text-align: center;
+  border: 1px orange solid;
+  border-radius: 4px;
 }
 
 .your-build {
@@ -290,7 +292,7 @@
 .bar-team{
   display:inline-block;
   background-color: #282c34;
-  border: 1px orange solid;
+  border: 1px white solid;
   border-radius: 4px;
   height:90px;
   width:260px;
@@ -302,6 +304,8 @@
   font-style: italic;
   display: block;
   width: 100%;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 
 .bar-team-roster{

@@ -102,22 +102,24 @@ export class ReviewForm extends React.Component {
           <ul className='review-team'>{currentTeam}</ul>
         </section> 
         <section className='other-lists'>
-          <ul className='review-stats'>
-            <li className='review-stat'>Damage: {dmgSum} </li>
-            <li className='review-stat'>Damage Per Second: {dpsSum}</li>
-            <li className='review-stat'>Health: {healthSum}</li>
-            <li className='review-stat'>Healing Per Second: {hpsSum}</li>
-          </ul>
-          <section className='team-notes'>
-            <label htmlFor='userNotes' className='notes-label'>Notes</label>
-            <textarea aria-label='userNotes' name='userNotes' className='userNotes'></textarea>
-          </section>
+          <div className='stats-notes-container'>
+            <ul className='review-stats'>
+              <li className='review-stat'>Damage: {dmgSum} </li>
+              <li className='review-stat'>Damage Per Second: {dpsSum}</li>
+              <li className='review-stat'>Health: {healthSum}</li>
+              <li className='review-stat'>Healing Per Second: {hpsSum}</li>
+            </ul>
+            <section className='team-notes'>
+              <label htmlFor='userNotes' className='notes-label'>Notes</label>
+              <textarea aria-label='userNotes' name='userNotes' className='userNotes' placeholder='Enter notes about your build...'></textarea>
+            </section>
+          </div>
           <section className='review-abilities'>
-            <h4 aria-level='2'>Abilities</h4>
+            <h4 aria-level='2' className='review-abilities-label'>Abilities</h4>
             <ul className='review-abilities-list'>{abilities}</ul>
           </section>
           <section className='review-ultimates'>
-            <h4 aria-level='3'>Ultimates</h4>
+            <h4 aria-level='3' className='review-ults-label'>Ultimates</h4>
             <ul className='review-ult-list'>{ultimates}</ul>
           </section>
         </section> 

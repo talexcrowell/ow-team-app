@@ -2,11 +2,13 @@
 
 .team-review{
   margin-top: 50px;
-  background-color: white;
-  border: 1px white solid;
+  background-color: #282c34;
+  border: 1px orange solid;
   border-radius: 4px;
   display: inline-block;
-  width:960px;
+  max-width:960px;
+  min-width: 300px;
+  width: 100%;
 }
 /* Review Team Template */
 .buildName{
@@ -18,10 +20,10 @@
 .review-heading{
   display: block;
   text-align: center;
-  width: 795px;
+  width: 100%;
   font-style: italic;
-  background-color: gainsboro;
-  border: 1px gainsboro solid;
+  background-color: grey;
+  border: 1px grey solid;
   margin-top: 0px;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
@@ -31,19 +33,23 @@
 .buildName-label{
   font-size: 20px;
   float: left;
-  background-color: white;
+  background-color: #282c34;
   margin: 5px;
+  
 
 }
 
 .review-build {
   display: inline-block;
-  background-color: white;
-  width: 940px;
+  background-color: #282c34;
+  max-width: 950px;
+  min-width: 300px;
+  width: 100%;
   margin-left: 0px;
   text-align: center;
   bottom:0px;
-  border: 1px gainsboro solid;
+  border: 1px orange solid;
+  border-radius: 4px;
 }
 
 .review-team{
@@ -51,15 +57,17 @@
   margin: 0px;
   padding: 5px;
   padding-top: 7.5px;
+  background-color: #282c34;
 }
 
 .review-team-roster{
-  width: 795px;
+  width: 100%;
+  max-width: 940px;
+  min-width: 300px;
   display: inline-block;
   height: auto;
   margin-left: 0;
   border: 1px gainsboro solid;
-  float:left;
 }
 
 .current-label-review{
@@ -73,8 +81,9 @@
   background-color: gainsboro;
   border: 1px white solid;
   border-radius: 6px;
-  padding: 2.5px;
-  width: 130px;
+  padding: 5px;
+  margin: 7.5px;
+  width: 135px;
   height: 275px;
   float: left;
 }
@@ -82,29 +91,42 @@
 .hero-image-review{
   width: 120px;
   height: auto;
+  background-color: #282c34;
 }
 
 .hero-name-review{
   font-style: italic;
   font-weight: bold;
   margin: 0px;
-  width: 124px;
+  width: 100%;
   border-radius: 6px;
+  color: black;
 }
 
 .hero-role-review{
   bottom: 0px;
   margin-top: 2.5px;
   font-size: 14px;
-  width: 123px;
+  width: 100%;
   border-radius: 6px;
+  color: black;
 }
 
 .other-lists{
   display: inline-block;
   height: auto;
   bottom: 0;
-  width: 795px;
+  width: 100%;
+}
+
+.stats-notes-container{
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  max-width: 300px;
+  margin-left: 5px;
+  margin-right: 5px;
+  float: left;
 }
 
 .review-stats{
@@ -113,106 +135,112 @@
   float: left;
   display: inline-block;
   font-size: 18px;
-  width: 275px;
+  max-width: 300px;
+  width: 100%;
   padding:5px;
   margin-top:0px;
   margin-bottom: 0px;
+  background-color: #282c34;
   border: 1px gainsboro solid;
 }
 
-.review-stats, .review-stat{
+.review-stat{
   padding: 2.5px;
+  background-color: #282c34;
 }
 
 
 .review-abilities {
   display: inline-block;
-  height: auto;
-  width: 270px;
+  height: 100%;
+  min-height: 230px;
+  max-width: 300px;
+  width: 100%;
   margin-top: 0px;
-  
+  margin-left: 5px;
+  margin-right: 5px;
+  background-color: #282c34;  
   border: 1px gainsboro solid;
+  float: left;
 }
 
 .review-ability{
   display: inline-block;
   font-size: 13px;
-  width:120px;
+  width:50%;
+  background-color: #282c34;  
   border: 1px gainsboro solid;
 }
 
 
 .review-ultimates{
   display: inline-block;
-  margin-bottom: 50px;
-  width: 250px;
-  vertical-align: top;
-  
+  max-width: 300px;
+  width: 100%;
+  height: 100%;
+  min-height: 230px;
+  background-color: #282c34;
+  margin-left: 5px;
+  margin-right: 5px;
+  border: 1px white solid;
+  float: left; 
 }
 
 .review-ult-list{
+  display: inline-block;
   height: auto;
   width: 250px;
   margin-top: 0px;
+  background-color: #282c34; 
 }
 
 .review-ult{
   padding: 5px;
+  background-color: #282c34; 
 }
 
-.review-ultimates, h4{
+.review-abilities-label{
+  background-color: grey;
+}
+
+.review-abilities-list{
+  background-color: #282c34; 
+}
+
+.review-ults-label{
   margin-top: 0px;
   margin-bottom: 5px;
-  background-color: white;
+  background-color: grey;
 }
 
 .team-notes {
   text-align: left;
-  height: 125px;
+  height: 100%;
+  min-height: 90px;
   float: left;
   clear:left;
   display: inline-block;
   font-size: 18px;
-  width: 270px;
-  margin-top:0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  padding-left: 5px;
+  max-width: 300px;
+  width: 100%;
+  background-color: #282c34;
 }
 
-textarea, .user-notes {
+.userNotes {
   resize: none;
-  width: 265px;
-  min-height: 85px;
+  max-width: 300px;
+  width: 100%;
+  height: 100%;
+  min-height: 88px;
+  background-color: #282c34;
 }
 
 .notes-label{
-  width:270px;
-  display: inline;
-}
-
-.team-notes, .notes-label{
-  margin-top:0px;
-  background-color: white;
-  width:270px;
-  display: block;
-  vertical-align: top;
-  font-style: italic;
-  font-weight: bold;
-}
-
-/* User-Teams Template */
-.userteams-build-review {
-  background-color: white;
-  display: inline-block;
-  width: 160px;
-  height: 100%;
-  float: left;
-}
-
-.userteams, .your-build {
-  text-align: center;
-  width: 160px;
+  padding: 2.5px;
+  width: 100%;
+  max-width: 300px;
+  display:inline-block;
+  background-color: grey; 
 }
 
 /* Error */
@@ -263,7 +291,10 @@ textarea, .user-notes {
 }
 
 .review-flip-label{
+  display: block;
   font-weight: bold;
+  background-color: #282c34;
+  width: 100%;
 }
 
 .save-error{

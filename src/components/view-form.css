@@ -5,7 +5,7 @@
 
 /* Component Template */
 
-.team-review{
+.team-view{
   background-color: white;
   border: 1px white solid;
   border-radius: 4px;
@@ -25,13 +25,6 @@
 }
 
 
-.review-ultimates{
-  display: inline-block;
-  margin: 0px;
-  width: 250px;
-  vertical-align: top;
-  border: 1px gainsboro solid;
-}
 
 .review-ult-list{
   height: auto;
@@ -49,11 +42,6 @@
   padding-right: 0;
 }
 
-.review-ultimates, h4{
-  margin-top: 0px;
-  margin-bottom: 5px;
-  background-color: white;
-}
 
 .review-team-notes {
   text-align: left;
