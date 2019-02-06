@@ -128,6 +128,11 @@ export class TeamBuild extends React.Component {
     return(
       <main role='main' className="team-build">
         <Link to='/dashboard'><button onClick={() => this.props.dispatch(resetUserTeam())}>Dashboard</button></Link>
+        <div className='build-introduction'>
+          <h3 className='build-introduction-label'> What do I do?</h3>
+          <p className= 'build-description'>Build a team composition that you would like to save. After you are satisfied with your picks, you can review your build, add notes and a name, and finally save it!</p>
+          <p className= 'build-description'>*Psst... the standard build is 2 Damage, 2 Tanks, and 2 Support*</p>
+        </div>
         <h3 aria-level='1' className='roster-label'>Hero Roster</h3>
         <section className="hero-roster">
           <ul>{heroes}</ul>

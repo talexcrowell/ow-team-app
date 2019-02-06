@@ -13,6 +13,28 @@
   margin-bottom: 50px;
 }
 
+.build-introduction{
+  width: 100%;
+  max-width: 950px;
+  min-width: 300px;
+  background-color: #282c34;
+  border: 1px orange solid;
+  border-radius: 4px;
+  margin: 5px;
+}
+
+.build-introduction-label{
+  margin-top: 0;
+  background-color: grey;
+}
+
+.build-description{
+  background-color: #282c34;
+  font-style: italic;
+  padding: 5px;
+  font-size: 20px;
+}
+
 /* Hero-Roster Template */
 
 .hero-roster{

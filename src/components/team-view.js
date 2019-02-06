@@ -1,23 +1,28 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Redirect} from 'react-router-dom';
+import {Redirect, Link} from 'react-router-dom';
 import requiresLogin from '../requires-login';
 import ViewForm from './view-form';
 import BarUserTeams from './bar-user-teams';
+import {resetUserTeam} from '../actions/user';
 import './build-review.css';
 
-export function BuildView (props) {
-  if(!props.loggedIn){
+export class BuildView extends React.Component {
+  
+  render(){
+    if(!this.props.loggedIn){
+      return(
+        <Redirect to='/landing-page' />
+      )
+    }
     return(
-      <Redirect to='/landing-page' />
+      <main role='main' className='team-review'>
+        <Link to='/dashboard'><button onClick={() => this.props.dispatch(resetUserTeam())}>Dashboard</button></Link>      
+        <BarUserTeams />
+        <ViewForm />
+      </main>
     )
   }
-  return(
-    <main role='main' className='team-review'>
-      <BarUserTeams />
-      <ViewForm />
-    </main>
-  )
 }
 
 function mapStateToProps(state){

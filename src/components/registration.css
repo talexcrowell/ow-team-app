@@ -51,6 +51,7 @@ button {
   border-radius: 4px;
   margin: 5px;
   font-size: 20px;
+  color: black;
 }
 
 .email, .username, .password {
