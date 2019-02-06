@@ -1,11 +1,13 @@
 /* Component Template */
 
 .team-build{
-  background-color: white;
-  border: 1px white solid;
+  background-color: #282c34;
+  border: 1px orange solid;
   border-radius: 4px;
   display: inline-block;
-  width:980px;
+  max-width:980px;
+  min-width: 300px;
+  width: 100%;  
   padding: 10px;
   margin-top: 50px;
   margin-bottom: 50px;
@@ -15,43 +17,48 @@
 
 .hero-roster{
   display: inline-block;
-  padding: 10px;
-  max-width: 900px;
+  padding: 5px;
+  max-width: 940px;
   min-width: 300px;
-  height: 600px;
+  height: 620px;
   width: 100%;
-  background-color: white;
-  border: 1px gainsboro solid;
-  overflow: scroll;
+  background-color: #282c34;
+  border: 1px white solid;
+  overflow-y: scroll;
 }
 
 .roster-label{
   display: inline-block;
-  width: 798px;
+  width: 100%;
+  max-width: 940px;
+  min-width: 300px;
   margin:0;
   text-align:center;
-  background-color: gainsboro;
+  background-color: grey;
   border: 1px gainsboro solid;
   font-style: italic;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 
 .hero {
   background-color: gainsboro;
   border: 1px white solid;
-  width: 140px;
+  width: 135px;
   height: 300px;
-  margin: 7.5px;
+  margin: 5px;
   border-radius: 6px;
-  padding: 7px;
+  padding: 5px;
   float: left;
 }
 
 .hero-name, .hero-role{
   margin-top:2.5px;
-  width: 125px;
+  width: 100%;
   margin-bottom:2.5px;
   font-size: 12px;
   border-radius: 6px;
+  color: black;
 }
 
 .hero-name{
@@ -61,7 +68,7 @@
 }
 
 .heroimage {
-  background-color: white;
+  background-color: #282c34;
   width: 120px;
   height: auto;
 }
@@ -71,19 +78,23 @@
 
 .current-build {
   display: inline-block;
-  background-color: gainsboro;
-  width: 800px;
-  margin-left: 160px;
+  background-color: #282c34;
+  max-width: 940px;
+  min-width: 300px;
+  width: 100%;
   text-align: center;
   bottom:0px;
-  border: 1px gainsboro solid;
+  border: 1px orange solid;
   border-radius: 4px;
 }
 
 .current-team-roster{
-  width:540px;
+  width:640px;
+  max-width: 640px;
+  min-width: 300px;
+  width: 100%;
   display: inline-block;
-  height: 250px;
+  height: auto;
   margin-left: 0;
   border: 1px gainsboro solid;
   padding: 5px;
@@ -93,13 +104,19 @@
 .current-team{
   height: 240px;
   margin: 0px;
+  background-color: #282c34;
 }
 
 .current-label{
-  width: 798px;
+  display: inline-block;
+  width: 100%;
+  max-width: 940px;
+  min-width: 300px;
   margin-top: 0px;
   margin-bottom: 0px;
+  font-size: 24px;
   font-style: italic;
+  background-color: grey;
   border: 1px gainsboro solid;
 }
 
@@ -110,66 +127,72 @@
   padding: 2.5px;
   margin: 1.5px;
   font-size: 14px;
-  width: 85px;
-  height: 230px;
+  width: 100px;
+  height: 240px;
   float: left;
 }
 
 .hero-image-current{
-  width: 70px;
+  width: 80px;
   height: auto;
 }
 
 .hero-name-current{
   margin:0;
-  width: 75px;
-  height: 32px;
+  width: 100%;
   border-radius: 6px;
+  color: black;
 }
 
 .hero-role-current{
   font-size: 12px;
-  width: 75px;
+  width: 100%;
   height: 28px;
   margin:2.5px;
   margin-left: 0px;
   border-radius: 6px;
   text-align: center;
+  color: black;
 }
 .stats{
   text-align: left;
   float: left;
   display: inline-block;
   font-size: 18px;
-  width: 540px;
+  width: 100%;
+  max-width: 640px;
+  min-width: 300px;
   padding:10px;
   border: 1px gainsboro solid;
-  clear:left;
   margin-top:0px;
+  background-color: #282c34;
 }
 
 .stats, .stat{
   padding: 3px;
+  background-color: #282c34;
 }
 
 .lists-buttons{
   display: inline-block;
-  width: 250px;
-  float: right;
+  width: 280px;
+  background-color: #282c34;
 }
 
 .abilities {
   display: inline-block;
   height: 200px;
-  width: 250px;
+  width: 100%;
   margin-top: 0px;
   padding-bottom: 15px;
   border: 1px gainsboro solid;
   border-radius: 4px;
+  background-color: #282c34;
 }
 
 .abilities-list{
   margin-top: 5px;
+  background-color: #282c34;
 }
 
 .ability{
@@ -177,6 +200,7 @@
   font-size: 13px;
   width:120px;
   border: 1px gainsboro solid;
+  background-color: #282c34;
 }
 
 .ultimates{
@@ -185,71 +209,106 @@
   height: 160px;
   border: 1px gainsboro solid;
   border-radius: 4px;
+  background-color: #282c34;
 }
 
 .ultimates, h4{
   margin-top: 0px;
   margin-bottom: 5px;
-  background-color: white;
+  background-color: #282c34;
+}
+
+.ult{
+  background-color: #282c34;
+  color: white;
 }
 
 .build-buttons{
-  background-color: white;
+  background-color: #282c34;
   border-radius: 4px;
 }
 
 /* User-Teams Template */
 .userteams-build {
-  background-color: white;
+  background-color: #282c34;
   display: inline-block;
-  width: 160px;
-  height: 100%;
-  float: left;
+  max-width: 940px;
+  min-width: 300px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 .your-build {
   display: inline-block;
-  background-color: white;
+  background-color: grey;
   font-weight: bold;
-  margin-top: 10px;
-  text-align: center;
-  width: 160px;
+  width: 100%;
+  max-width: 940px;
+  min-width: 300px;
+  margin:0;
+  font-size: 20px;
+  font-style: italic;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.user-builds{
+  background-color: #282c34;
+}
+
+.user-build {
+  float: left;
+  padding: 2.5px;
+  background-color: #282c34;
+}
+
+.ults-label{
+  background-color: grey;
+}
+.abilities-label{
+  background-color: grey;
 }
 
 .bar-hero{
-  background-color: white;
-  width: 25px;
+  background-color: #282c34;
+  width: 40px;
   border-radius: 6px;
-  padding: 2.5px;
+  padding: 1px;
+  margin: 1px;
   float: left;
 }
 
 .bar-hero-image{
   background-color: white;
   height: auto;
-  width: 25px;
+  width: 35px;
   border: 1px gainsboro solid;
+  border-radius: 4px;
 }
 
 .bar-team{
   display:inline-block;
-  background-color: white;
-  border: 1px gainsboro solid;
+  background-color: #282c34;
+  border: 1px orange solid;
   border-radius: 4px;
-  height:75px;
-  width:160px;
+  height:90px;
+  width:260px;
 }
 
 .bar-team-name{
-  background-color: white;
+  background-color: grey;
   font-weight: bold;
   font-style: italic;
-  margin-bottom: 10px;
+  display: block;
+  width: 100%;
 }
 
 .bar-team-roster{
-  width: 158px;
-  height: 50px;
+  background-color: #282c34;
+  width: 100%;
+  height: auto;
+  text-align: center;
 }
 
 
@@ -311,9 +370,11 @@
 
 .hero-ult-desc{
   margin-top:2.5px;
-  width: 125px;
+  width: 100%;
   text-align: left;
   margin-bottom:2.5px;
   font-size: 11px;
   border-radius: 6px;
+  color: black;
 }
+

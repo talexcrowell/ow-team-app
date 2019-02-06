@@ -1,9 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Redirect} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
 import requiresLogin from '../requires-login';
 import ReviewForm from './review-form';
 import BarUserTeams from './bar-user-teams';
+import {resetUserTeam} from '../actions/user';
 import './build-review.css';
 
 export class BuildReview extends React.Component{
@@ -16,6 +17,7 @@ export class BuildReview extends React.Component{
     
     return(
       <main role='main' className='team-review'>
+        <Link to='/dashboard'><button onClick={() => this.props.dispatch(resetUserTeam())}>Dashboard</button></Link>
         <BarUserTeams />
         <ReviewForm />
       </main>

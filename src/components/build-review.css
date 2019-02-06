@@ -39,11 +39,10 @@
 .review-build {
   display: inline-block;
   background-color: white;
-  width: 795px;
+  width: 940px;
   margin-left: 0px;
   text-align: center;
   bottom:0px;
-  float: right;
   border: 1px gainsboro solid;
 }
 
@@ -63,7 +62,7 @@
   float:left;
 }
 
-.current-label{
+.current-label-review{
   width: 798px;
   margin-top: 0px;
   margin-bottom: 0px;
@@ -203,7 +202,7 @@ textarea, .user-notes {
 }
 
 /* User-Teams Template */
-.userteams-build {
+.userteams-build-review {
   background-color: white;
   display: inline-block;
   width: 160px;

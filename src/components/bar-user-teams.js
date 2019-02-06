@@ -10,16 +10,15 @@ class BarUserTeams extends React.Component {
 
     //Returns a listable entry of the user saved team
     const userTeams = this.props.userTeams.map((team, index) => (
-      <li key={index}>
+      <li key={index} className='user-build'>
         <BarTeam teamIndex={index} />
       </li>
     ));
 
     return(
       <section className="userteams-build">
-        <Link to='/dashboard'><button onClick={() => this.props.dispatch(resetUserTeam())}>Dashboard</button></Link>
         <label className='your-build'>Your Builds</label>
-        <ul>{userTeams}</ul>
+        <ul className='user-builds'>{userTeams}</ul>
       </section>)
   }
 }

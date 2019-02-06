@@ -12,7 +12,7 @@
   margin-right: 0 auto;
 }
 
-h3{
+.current-user{
   background-color: #282c34;
   font-size: 38px;
   height: 45px;
@@ -50,7 +50,7 @@ h3{
   background-color: gainsboro;
   border: 1px white solid;
   width: 130px;
-  height: auto;
+  height: 360px;
   border-radius: 6px;
   padding: 5px;
   float: left;
@@ -88,7 +88,7 @@ h3{
 
 .dash-hero-ult{
   width: 100%;
-  font-size: 1px;
+  font-size: 16px;
   text-align: center;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;

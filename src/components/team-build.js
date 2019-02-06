@@ -116,7 +116,7 @@ export class TeamBuild extends React.Component {
     
     // Returns a list of hero ultimates from specific roster
     const ultimates = this.props.currentTeam.map((hero, index) => (
-      <li key={index}>{hero.ultimate.ultName}</li>
+      <li className='ult' key={index}>{hero.ultimate.ultName}</li>
     ));
 
     // Returns a list of hero abilities from specific roster
@@ -127,6 +127,7 @@ export class TeamBuild extends React.Component {
     
     return(
       <main role='main' className="team-build">
+        <Link to='/dashboard'><button onClick={() => this.props.dispatch(resetUserTeam())}>Dashboard</button></Link>
         <h3 aria-level='1' className='roster-label'>Hero Roster</h3>
         <section className="hero-roster">
           <ul>{heroes}</ul>
@@ -138,13 +139,19 @@ export class TeamBuild extends React.Component {
           <section className='current-team-roster'>
             <ul className='current-team'>{currentTeam}</ul>
           </section>
+          <ul className='stats'>
+            <li className='stat'>Damage: {dmgSum} </li>
+            <li className='stat'>Damage Per Second: {dpsSum}</li>
+            <li className='stat'>Health: {healthSum}</li>
+            <li className='stat'>Healing Per Second: {hpsSum}</li>
+          </ul>
           <section className='lists-buttons'>
             <section className='ultimates'>
-              <h4 aria-level='3'>Ultimates</h4>
+              <h4 aria-level='3' className='ults-label'>Ultimates</h4>
               <ul className='ult-list'>{ultimates}</ul>
             </section>
             <section className='abilities'>
-              <h4 aria-level='3' >Abilities</h4>
+              <h4 aria-level='3' className='abilities-label'>Abilities</h4>
               <ul className='abilities-list'>{abilities}</ul>
             </section>
             <section className='build-buttons'>
@@ -152,12 +159,6 @@ export class TeamBuild extends React.Component {
               <button onClick={() => this.fullReset()}>Reset</button>
             </section>
           </section>  
-          <ul className='stats'>
-            <li className='stat'>Damage: {dmgSum} </li>
-            <li className='stat'>Damage Per Second: {dpsSum}</li>
-            <li className='stat'>Health: {healthSum}</li>
-            <li className='stat'>Healing Per Second: {hpsSum}</li>
-          </ul>
         </section>
       </main>
     )
