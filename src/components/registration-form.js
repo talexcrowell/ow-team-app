@@ -23,7 +23,7 @@ export class RegistrationForm extends React.Component {
     //Creates error div if error is detected
     let registrationError;
     if(this.props.error){
-      registrationError = <div className='registration-error' aria-live='polite'>Please fill all fields</div>
+      registrationError = <div className='registration-error' aria-live='polite'>{this.props.error.location} {this.props.error.message}</div>
     }
 
     return (

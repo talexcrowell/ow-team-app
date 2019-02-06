@@ -1,8 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
 import BarTeam from './bar-team';
-import {resetUserTeam} from '../actions/user';
 
 
 class BarUserTeams extends React.Component {
