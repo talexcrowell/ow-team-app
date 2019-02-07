@@ -89,7 +89,7 @@ export class ViewForm extends React.Component {
             </ul>
             <section className='team-notes'>
               <label htmlFor='userNotes' className='notes-label'>Notes</label>
-              <textarea aria-label='userNotes' name='userNotes' className='userNotes' placeholder='Enter notes about your build...'></textarea>
+              <textarea aria-label='userNotes' name='userNotes' className='userNotes' placeholder={this.props.teamCollective.notes}></textarea>
             </section>
           </div>
           <section className='review-abilities'>

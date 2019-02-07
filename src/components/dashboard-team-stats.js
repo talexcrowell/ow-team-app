@@ -9,13 +9,11 @@ export class DashboardTeamStats extends React.Component {
   
   //Returns an array of hero rosters from user-saved teams  
   const teamSelector = this.props.teams.map(collective => {
-    console.log('COLLECTIVE TEAM', collective.team);
     return collective.team;
   });
 
   //Returns an array of user-saved teams
   const teamName = this.props.teams.map(collective => {
-    console.log('COLLECTIVE', collective);
     return collective;
   })
 
@@ -67,7 +65,7 @@ export class DashboardTeamStats extends React.Component {
           <li className='dash-stat'>Health: {healthStats} </li>
           <li className='dash-stat'>Healing Per Second: {hpsStats}</li>
         </ul>
-        <p className='dash-team-notes'>{teamSelector[this.props.teamIndex].notes || 'No notes for this build'}</p>
+        <p className='dash-team-notes'>{teamName[this.props.teamIndex].notes || 'No notes for this build'}</p>
         <Link to='/view'><button onClick={() => this.props.dispatch(viewUserTeam(teamName[this.props.teamIndex]))}>View Build</button></Link> 
       </section>
     </section>)
