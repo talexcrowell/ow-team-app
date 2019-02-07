@@ -16,7 +16,7 @@ export function LoginPage (props) {
   }
   return (
     <section role='main' className='login'>
-      <img className='login-logo col-12' src="https://i.ibb.co/bgNbS1B/overwatch-buddy-logo.png" alt='Overwatch Buddy logo'></img>
+      <img className='login-logo col-12' src={process.env.PUBLIC_URL + '/resources/overwatch-buddy-logo.png'} alt='Overwatch Buddy logo'></img>
       <h2 aria-level='1' className='col-12'>Login</h2>  
       {loginError}
       <LoginForm />

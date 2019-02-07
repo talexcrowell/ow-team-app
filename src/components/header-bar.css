@@ -1,6 +1,8 @@
 .headerbar{
   background-color: #282c34;
   width: 100%;
+  max-width: 960px;
+  min-width: 300px;
   height: auto;
   border-radius: 4px;
   margin-bottom:10px;
@@ -8,17 +10,18 @@
 
 .action-buttons{
   background-color:#282c34;
-  display: inline-block;
-  height: 45px;
+  display:inline-block;
+  height:auto;
   margin-top: 10px;
   margin-bottom: 10px;
   width: 50%;
-  margin-right: 0px;
-  float: left;
+  max-width: 480;
+  min-width: 300px;
 }
 
 .current-user{
+  display: inline-block;
   width: 50%;
-  float: left;
-  clear: right;
+  max-width: 480;
+  min-width: 300px;
 }

@@ -49,9 +49,14 @@
   font-weight: bold;
 }
 .login-logo{
-  background-color: white;
-  height: auto;
-  padding: 5px;
+  background-color: #282c34;
+  width: 100%;
+  max-width: 500px;
+  min-width: 300px;
+  border: 1px white solid;
+  border-radius: 4px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .login-buttons{

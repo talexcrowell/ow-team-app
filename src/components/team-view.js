@@ -17,7 +17,8 @@ export class BuildView extends React.Component {
     }
     return(
       <main role='main' className='team-review'>
-        <Link to='/dashboard'><button onClick={() => this.props.dispatch(resetUserTeam())}>Dashboard</button></Link>      
+        <img className='logo' src={process.env.PUBLIC_URL + '/resources/overwatch-buddy-logo.png'} alt='Overwatch Buddy logo'></img>
+        <Link to='/dashboard'><button className='dash-button' onClick={() => this.props.dispatch(resetUserTeam())}>Dashboard</button></Link>      
         <BarUserTeams />
         <ViewForm />
       </main>

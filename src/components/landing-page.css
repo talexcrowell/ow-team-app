@@ -16,7 +16,10 @@
 .landing-logo { 
   background-color: #282c34;
   width: 100%;
-  max-width: 320px;
+  max-width: 500px;
+  min-width: 300px;
+  border: 1px white solid;
+  border-radius: 4px;
 }
 
 .landing-title {

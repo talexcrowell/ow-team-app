@@ -31,8 +31,8 @@ export class RegistrationForm extends React.Component {
         e.preventDefault();
         this.onSubmit(e);
         }}>
-        <img className='register-logo col-12' src="https://i.ibb.co/bgNbS1B/overwatch-buddy-logo.png" alt='Overwatch Buddy logo'></img>
-        <h2 aria-level='1' className='col-12'>Registration</h2>
+        <img className='register-logo' src={process.env.PUBLIC_URL + '/resources/overwatch-buddy-logo.png'} alt='Overwatch Buddy logo'></img>
+        <h2 aria-level='1' className='registration-title'>Registration</h2>
         {registrationError}
         <section className='email col-12'>
           <label htmlFor='regEmail' className='email-label'>Email</label>

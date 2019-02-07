@@ -1,6 +1,6 @@
 .regForm {
   background-color: #282c34;
-  border: 1px orange solid;
+  border: 3px orange solid;
   border-radius: 4px;
   display: inline-block;
   text-align:center;
@@ -68,7 +68,12 @@ button {
 }
 
 .register-logo{
-  padding: 5px;
-  background-color: white;
-  height: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #282c34;
+  width: 100%;
+  max-width: 500px;
+  min-width: 300px;
+  border: 1px white solid;
+  border-radius: 4px;
 }

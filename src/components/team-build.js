@@ -127,7 +127,8 @@ export class TeamBuild extends React.Component {
     
     return(
       <main role='main' className="team-build">
-        <Link to='/dashboard'><button onClick={() => this.props.dispatch(resetUserTeam())}>Dashboard</button></Link>
+        <img className='logo' src={process.env.PUBLIC_URL + '/resources/overwatch-buddy-logo.png'} alt='Overwatch Buddy logo'></img>
+        <Link to='/dashboard'><button className='dash-button' onClick={() => this.props.dispatch(resetUserTeam())}>Dashboard</button></Link>
         <div className='build-introduction'>
           <h3 className='build-introduction-label'> What do I do?</h3>
           <p className= 'build-description'>Build a team composition that you would like to save. After you are satisfied with your picks, you can review your build, add notes and a name, and finally save it!</p>

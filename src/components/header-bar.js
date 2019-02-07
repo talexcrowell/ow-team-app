@@ -14,6 +14,7 @@ export function HeaderBar (props){
 
   return(
     <section className='headerbar'>
+    <img className='logo' src={process.env.PUBLIC_URL + '/resources/overwatch-buddy-logo.png'} alt='Overwatch Buddy logo'></img>
       <h3 aria-level='1' className='current-user'>Welcome {props.currentUser.username}</h3>
       <div className='action-buttons'>
         <Link to='/build' ><button className='build' onClick={() => props.dispatch(resetUserTeam())}>Build A New Team</button></Link>  
