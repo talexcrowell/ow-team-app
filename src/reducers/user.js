@@ -46,7 +46,7 @@ export default function userReducer(state=initialState, action){
   else if(action.type === VIEW_USER_TEAM){
     return{
       ...state,
-      currentTeam:[...action.team],
+      currentTeam:[...action.team.team],
       teamCollective: action.team,
     }
   }
