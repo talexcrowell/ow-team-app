@@ -2,15 +2,13 @@
 
 .team-build{
   background-color: #282c34;
-  border: 1px orange solid;
+  border: 2px orange solid;
   border-radius: 4px;
   display: inline-block;
   max-width:980px;
   min-width: 300px;
   width: 100%;  
   padding: 10px;
-  margin-top: 50px;
-  margin-bottom: 50px;
 }
 
 .build-introduction{

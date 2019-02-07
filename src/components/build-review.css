@@ -1,9 +1,8 @@
 /* Component Template */
 
 .team-review{
-  margin-top: 50px;
   background-color: #282c34;
-  border: 1px orange solid;
+  border: 2px orange solid;
   border-radius: 4px;
   display: inline-block;
   max-width:960px;
