@@ -7,8 +7,8 @@ import './landing-page.css'
 export class LandingPage extends React.Component{
   onSubmit() {
     const user = {
-      username: 'demoAccount',
-      password: 'password123'
+      username: 'username',
+      password: 'password'
     };
     return this.props.dispatch(login(user.username, user.password));
   }
