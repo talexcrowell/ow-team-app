@@ -70,7 +70,7 @@ export const refreshAuthToken = () => {
     fetch(`${API_BASE_URL}/auth/refresh`, {
       method: 'POST',
       headers: {
-        Authoriation: `Bearer ${authToken}`
+        Authorization: `Bearer ${authToken}`
       }
     })
     .then(res => {
